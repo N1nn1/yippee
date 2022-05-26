@@ -68,6 +68,8 @@ public class WhoopeeCushionBlock extends AbstractPressurePlateBlock implements W
         if (output != i) {
             BlockState blockState = this.setRedstoneOutput(state, i);
             world.setBlockState(pos, blockState, 2);
+            this.updateNeighbors(world, pos);
+            world.scheduleBlockRerenderIfNeeded(pos, state, blockState);
         }
 
         if (!bl2 && bl) {
@@ -114,9 +116,6 @@ public class WhoopeeCushionBlock extends AbstractPressurePlateBlock implements W
     public BlockState rotate(BlockState state, BlockRotation rotation) { return state.with(FACING, rotation.rotate(state.get(FACING))); }
     @Override
     public BlockState mirror(BlockState state, BlockMirror mirror) { return state.rotate(mirror.getRotation(state.get(FACING))); }
-
-    @Override
-    public boolean emitsRedstonePower(BlockState state) { return false; }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) { builder.add(PRESSED, FACING, WATERLOGGED); }
