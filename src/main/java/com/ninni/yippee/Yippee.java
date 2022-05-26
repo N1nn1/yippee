@@ -5,8 +5,6 @@ import com.ninni.yippee.block.YippeeBlocks;
 import com.ninni.yippee.item.YippeeItems;
 import com.ninni.yippee.sound.YippeeSoundEvents;
 import net.fabricmc.api.ModInitializer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class Yippee implements ModInitializer {
 	public static final String MOD_ID = "yippee";

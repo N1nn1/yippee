@@ -3,7 +3,6 @@ package com.ninni.yippee.block;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.loot.LootTables;
 import net.minecraft.sound.BlockSoundGroup;
