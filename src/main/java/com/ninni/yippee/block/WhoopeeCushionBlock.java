@@ -12,6 +12,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
@@ -26,6 +28,8 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.event.GameEvent;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -52,9 +56,35 @@ public class WhoopeeCushionBlock extends AbstractPressurePlateBlock implements W
     protected BlockState setRedstoneOutput(BlockState state, int rsOut) { return state.with(PRESSED, rsOut > 0); }
 
     @Override
-    protected void playPressSound(WorldAccess world, BlockPos pos) { world.playSound(null, pos, YippeeSoundEvents.BLOCK_CUSHION_PRESSED, SoundCategory.BLOCKS, 0.75F, 1F); }
+    protected void playPressSound(WorldAccess world, BlockPos pos) { world.playSound(null, pos, YippeeSoundEvents.BLOCK_CUSHION_PRESSED, SoundCategory.BLOCKS, 0.5F, 1F); }
     @Override
     protected void playDepressSound(WorldAccess world, BlockPos pos) { world.playSound(null, pos, YippeeSoundEvents.BLOCK_CUSHION_UNPRESSED, SoundCategory.BLOCKS, 0.3F, 0.7F); }
+
+    @Override
+    protected void updatePlateState(@Nullable Entity entity, World world, BlockPos pos, BlockState state, int output) {
+        int i = this.getRedstoneOutput(world, pos);
+        boolean bl = output > 0;
+        boolean bl2 = i > 0;
+        if (output != i) {
+            BlockState blockState = this.setRedstoneOutput(state, i);
+            world.setBlockState(pos, blockState, 2);
+        }
+
+        if (!bl2 && bl) {
+            this.playDepressSound(world, pos);
+            world.emitGameEvent(entity, GameEvent.BLOCK_UNPRESS, pos);
+        } else if (bl2 && !bl) {
+            this.playPressSound(world, pos);
+            if (world instanceof ServerWorld serverWorld && world.getFluidState(pos).getFluid() != Fluids.WATER) serverWorld.spawnParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 3,0.05,0.5,0.05,0.01);
+            if (world instanceof ServerWorld serverWorld && world.getFluidState(pos).getFluid() == Fluids.WATER) serverWorld.spawnParticles(ParticleTypes.BUBBLE_COLUMN_UP, pos.getX() + 0.5, pos.getY() + 0.2, pos.getZ() + 0.5, 15,0.05,0.5,0.05,0.2);
+            world.emitGameEvent(entity, GameEvent.BLOCK_PRESS, pos);
+        }
+
+        if (bl2) {
+            world.createAndScheduleBlockTick(new BlockPos(pos), this, this.getTickRate());
+        }
+
+    }
 
     @Override
     protected int getRedstoneOutput(World world, BlockPos pos) {
