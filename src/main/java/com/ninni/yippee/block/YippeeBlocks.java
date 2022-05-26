@@ -13,7 +13,7 @@ import static com.ninni.yippee.Yippee.*;
 
 public class YippeeBlocks {
 
-    public static final Block WHOOPEE_CUSHION = register("whoopee_cushion", new WhoopeeCushionBlock(AbstractBlock.Settings.of(Material.AGGREGATE).requiresTool().strength(0.2F).sounds(BlockSoundGroup.WOOL)));
+    public static final Block WHOOPEE_CUSHION = register("whoopee_cushion", new WhoopeeCushionBlock(AbstractBlock.Settings.of(Material.AGGREGATE).breakInstantly().sounds(BlockSoundGroup.WOOL)));
 
 
     private static Block register(String id, Block block) {
