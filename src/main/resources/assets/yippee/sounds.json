@@ -1,0 +1,6 @@
+{
+  "item.creature.yippee": {
+    "sounds": [ "yippee:item/creature/yippee" ],
+    "subtitle": "subtitles.entity.yippee.creature.yippee"
+  }
+}
