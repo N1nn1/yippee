@@ -2,9 +2,13 @@
   "item.yippee.creature": "ᓵ∷ᒷᔑℸ ̣ ⚍∷ᔑ",
   "item.yippee.moyai_statue": "Statua Moai",
 
+  "block.yippee.whoopee_cushion": "Cuscinetto rumoroso",
+
   "advancements.yippee.obtain_creature.title": "||⚍!¡!¡╎",
   "advancements.yippee.obtain_creature.description": "Ottieni la ᓵ∷ᒷᔑℸ ̣ ⚍∷ᔑ dall'immensa gioia",
 
   "subtitles.item.yippee.creature.yippee": "ᓵ∷ᒷᔑℸ ̣ ⚍∷ᔑ scoppia di gioia",
-  "subtitles.item.yippee.moyai.boom": "Potere antico si sprigiona"
+  "subtitles.item.yippee.moyai.boom": "Potere antico si sprigiona",
+  "subtitles.block.yippee.whoopee_cushion.pressed": "Cuscinetto si sgonfia",
+  "subtitles.block.yippee.whoopee_cushion.unpressed": "Cuscinetto si gonfia"
 }
