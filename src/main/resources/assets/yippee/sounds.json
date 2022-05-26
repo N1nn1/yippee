@@ -1,7 +1,7 @@
 {
-  "item.creature.yippee": {
-    "sounds": [ "yippee:item/creature/yippee" ],
-    "subtitle": "subtitles.item.yippee.creature.yippee"
+  "item.tbh.yippee": {
+    "sounds": [ "yippee:item/tbh/yippee" ],
+    "subtitle": "subtitles.item.yippee.tbh.yippee"
   },
   "item.moyai.boom": {
   "sounds": [ "yippee:item/moyai/boom" ],

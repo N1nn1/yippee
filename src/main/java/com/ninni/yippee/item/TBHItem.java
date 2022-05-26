@@ -14,9 +14,9 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class CreatureItem extends Item {
+public class TBHItem extends Item {
 
-    public CreatureItem(Settings settings) { super(settings); }
+    public TBHItem(Settings settings) { super(settings); }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {

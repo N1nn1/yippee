@@ -1,13 +1,13 @@
 {
-  "item.yippee.creature": "ᓵ∷ᒷᔑℸ ̣ ⚍∷ᒷ",
+  "item.yippee.tbh": "tbh",
   "item.yippee.moyai_statue": "Moyai Statue",
 
   "block.yippee.whoopee_cushion": "Whoopee Cushion",
 
-  "advancements.yippee.obtain_creature.title": "||╎!¡!¡ᒷᒷ",
-  "advancements.yippee.obtain_creature.description": "Obtain the ᓵ∷ᒷᔑℸ ̣ ⚍∷ᒷ of immense excitement",
+  "advancements.yippee.obtain_tbh.title": "Yippee",
+  "advancements.yippee.obtain_tbh.description": "Obtain the creature of immense excitement",
 
-  "subtitles.item.yippee.creature.yippee": "ᓵ∷ᒷᔑℸ ̣ ⚍∷ᒷ bursts of excitement",
+  "subtitles.item.yippee.tbh.yippee": "tbh bursts of excitement",
   "subtitles.item.yippee.moyai.boom": "Ancient power awakens",
   "subtitles.block.yippee.whoopee_cushion.pressed": "Cushion deflates",
   "subtitles.block.yippee.whoopee_cushion.unpressed": "Cushion inflates"

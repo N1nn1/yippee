@@ -2,13 +2,13 @@
   "parent": "minecraft:adventure/root",
   "display": {
     "icon": {
-      "item": "yippee:creature"
+      "item": "yippee:tbh"
     },
     "title": {
-      "translate": "advancements.yippee.obtain_creature.title"
+      "translate": "advancements.yippee.obtain_tbh.title"
     },
     "description": {
-      "translate": "advancements.yippee.obtain_creature.description"
+      "translate": "advancements.yippee.obtain_tbh.description"
     },
     "frame": "goal",
     "show_toast": true,
@@ -16,13 +16,13 @@
     "hidden": false
   },
   "criteria": {
-    "obtain_creature": {
+    "obtain_tbh": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "yippee:creature"
+              "yippee:tbh"
             ]
           }
         ]
@@ -31,7 +31,7 @@
   },
   "requirements": [
     [
-      "obtain_creature"
+      "obtain_tbh"
     ]
   ]
 }

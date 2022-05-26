@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "yippee:item/creature"
+    "layer0": "yippee:item/tbh"
   }
 }

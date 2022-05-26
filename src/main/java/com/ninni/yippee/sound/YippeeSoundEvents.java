@@ -9,8 +9,8 @@ import static com.ninni.yippee.Yippee.*;
 public interface YippeeSoundEvents {
 
 
-    SoundEvent ITEM_CREATURE_YIPPEE   = creature("yippee");
-    private static SoundEvent creature(String type) { return createItemSound("creature", type); }
+    SoundEvent ITEM_CREATURE_YIPPEE   = tbh("yippee");
+    private static SoundEvent tbh(String type) { return createItemSound("tbh", type); }
 
     SoundEvent ITEM_MOYAI_BOOM   = moyai("boom");
     private static SoundEvent moyai(String type) { return createItemSound("moyai", type); }
