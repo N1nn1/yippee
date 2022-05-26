@@ -11,7 +11,9 @@
     "sounds": [
       "yippee:block/whoopee_cushion/pressed1",
       "yippee:block/whoopee_cushion/pressed2",
-      "yippee:block/whoopee_cushion/pressed3"
+      "yippee:block/whoopee_cushion/pressed3",
+      "yippee:block/whoopee_cushion/pressed4",
+      "yippee:block/whoopee_cushion/pressed5"
     ],
     "subtitle": "subtitles.block.yippee.whoopee_cushion.pressed"
   },
