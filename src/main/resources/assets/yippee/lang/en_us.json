@@ -1,8 +1,10 @@
 {
   "item.yippee.creature": "ᓵ∷ᒷᔑℸ ̣ ⚍∷ᒷ",
+  "item.yippee.moyai_statue": "Moyai Statue",
 
   "advancements.yippee.obtain_creature.title": "||╎!¡!¡ᒷᒷ",
   "advancements.yippee.obtain_creature.description": "Obtain the ᓵ∷ᒷᔑℸ ̣ ⚍∷ᒷ of immense excitement",
 
-  "subtitles.entity.yippee.creature.yippee": "ᓵ∷ᒷᔑℸ ̣ ⚍∷ᒷ bursts of excitement"
+  "subtitles.entity.yippee.creature.yippee": "ᓵ∷ᒷᔑℸ ̣ ⚍∷ᒷ bursts of excitement",
+  "subtitles.entity.yippee.moyai.boom": "Ancient power awakens"
 }

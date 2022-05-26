@@ -1,8 +1,10 @@
 {
   "item.yippee.creature": "ᓵ∷ᒷᔑℸ ̣ ⚍∷ᔑ",
+  "item.yippee.moyai_statue": "Statua Moai",
 
   "advancements.yippee.obtain_creature.title": "||⚍!¡!¡╎",
   "advancements.yippee.obtain_creature.description": "Ottieni la ᓵ∷ᒷᔑℸ ̣ ⚍∷ᔑ dall'immensa gioia",
 
-  "subtitles.entity.yippee.creature.yippee": "ᓵ∷ᒷᔑℸ ̣ ⚍∷ᔑ scoppia di gioia"
+  "subtitles.entity.yippee.creature.yippee": "ᓵ∷ᒷᔑℸ ̣ ⚍∷ᔑ scoppia di gioia",
+  "subtitles.entity.yippee.moyai.boom": "Potere antico si sprigiona"
 }

@@ -14,6 +14,11 @@ public interface YippeeSoundEvents {
         return createItemSound("creature", type);
     }
 
+    SoundEvent ITEM_MOYAI_BOOM   = moyai("boom");
+    private static SoundEvent moyai(String type) {
+        return createItemSound("moyai", type);
+    }
+
     private static SoundEvent register(String id) {
         Identifier identifier = new Identifier(MOD_ID, id);
         return Registry.register(Registry.SOUND_EVENT, identifier, new SoundEvent(identifier));

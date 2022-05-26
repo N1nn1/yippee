@@ -2,5 +2,9 @@
   "item.creature.yippee": {
     "sounds": [ "yippee:item/creature/yippee" ],
     "subtitle": "subtitles.entity.yippee.creature.yippee"
-  }
+  },
+  "item.moyai.boom": {
+  "sounds": [ "yippee:item/moyai/boom" ],
+  "subtitle": "subtitles.entity.yippee.moyai.boom"
+}
 }
