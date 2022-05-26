@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,pressed=false": {
+      "model": "yippee:block/whoopee_cushion",
+      "y": 90
+    },
+    "facing=east,pressed=true": {
+      "model": "yippee:block/whoopee_cushion_pressed",
+      "y": 90
+    },
+    "facing=north,pressed=false": {
+      "model": "yippee:block/whoopee_cushion"
+    },
+    "facing=north,pressed=true": {
+      "model": "yippee:block/whoopee_cushion_pressed"
+    },
+    "facing=south,pressed=false": {
+      "model": "yippee:block/whoopee_cushion",
+      "y": 180
+    },
+    "facing=south,pressed=true": {
+      "model": "yippee:block/whoopee_cushion_pressed",
+      "y": 180
+    },
+    "facing=west,pressed=false": {
+      "model": "yippee:block/whoopee_cushion",
+      "y": 270
+    },
+    "facing=west,pressed=true": {
+      "model": "yippee:block/whoopee_cushion_pressed",
+      "y": 270
+    }
+  }
+}

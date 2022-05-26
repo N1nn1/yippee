@@ -1,10 +1,22 @@
 {
   "item.creature.yippee": {
     "sounds": [ "yippee:item/creature/yippee" ],
-    "subtitle": "subtitles.entity.yippee.creature.yippee"
+    "subtitle": "subtitles.item.yippee.creature.yippee"
   },
   "item.moyai.boom": {
   "sounds": [ "yippee:item/moyai/boom" ],
-  "subtitle": "subtitles.entity.yippee.moyai.boom"
-}
+  "subtitle": "subtitles.item.yippee.moyai.boom"
+ },
+  "block.whoopee_cushion.pressed": {
+    "sounds": [
+      "yippee:block/whoopee_cushion/pressed1",
+      "yippee:block/whoopee_cushion/pressed2",
+      "yippee:block/whoopee_cushion/pressed3"
+    ],
+    "subtitle": "subtitles.block.yippee.whoopee_cushion.pressed"
+  },
+  "block.whoopee_cushion.unpressed": {
+    "sounds": [ "yippee:block/whoopee_cushion/unpressed" ],
+    "subtitle": "subtitles.block.yippee.whoopee_cushion.unpressed"
+  }
 }
