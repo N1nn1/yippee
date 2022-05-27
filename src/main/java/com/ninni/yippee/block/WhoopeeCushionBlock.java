@@ -1,122 +1,142 @@
 package com.ninni.yippee.block;
 
-import com.ninni.yippee.sound.YippeeSoundEvents;
+import com.ninni.yippee.init.YippeeSoundEvents;
 import com.ninni.yippee.state.property.YippeeProperties;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.AbstractPressurePlateBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.block.Waterloggable;
-import net.minecraft.entity.Entity;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.BlockMirror;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.BasePressurePlateBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static net.minecraft.state.property.Properties.*;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.WATERLOGGED;
 
 @SuppressWarnings("deprecation")
-public class WhoopeeCushionBlock extends AbstractPressurePlateBlock implements Waterloggable {
-    protected static final VoxelShape PRESSED_SHAPE = Block.createCuboidShape(3.0, 0.0, 3.0, 13.0, 1.0, 13.0);
-    protected static final VoxelShape DEFAULT_SHAPE = Block.createCuboidShape(3.0, 0.0, 3.0, 13.0, 3.0, 13.0);
+public class WhoopeeCushionBlock extends BasePressurePlateBlock implements SimpleWaterloggedBlock {
+    protected static final VoxelShape PRESSED_SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 1.0, 13.0);
+    protected static final VoxelShape DEFAULT_SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 3.0, 13.0);
     public static final BooleanProperty PRESSED = YippeeProperties.PRESSED;
-    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    protected WhoopeeCushionBlock(AbstractBlock.Settings settings) {
+    protected WhoopeeCushionBlock(Properties settings) {
         super(settings);
-        this.setDefaultState(((this.stateManager.getDefaultState()).with(FACING, Direction.NORTH)).with(PRESSED, false).with(WATERLOGGED, false));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(PRESSED, false).setValue(WATERLOGGED, false));
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) { return this.getRedstoneOutput(state) > 0 ? PRESSED_SHAPE : DEFAULT_SHAPE; }
-
-    @Override
-    protected int getRedstoneOutput(BlockState state) { return state.get(PRESSED) ? 15 : 0; }
-    @Override
-    protected BlockState setRedstoneOutput(BlockState state, int rsOut) { return state.with(PRESSED, rsOut > 0); }
-
-    @Override
-    protected void playPressSound(WorldAccess world, BlockPos pos) { world.playSound(null, pos, YippeeSoundEvents.BLOCK_CUSHION_PRESSED, SoundCategory.BLOCKS, 0.5F, 1F); }
-    @Override
-    protected void playDepressSound(WorldAccess world, BlockPos pos) { world.playSound(null, pos, YippeeSoundEvents.BLOCK_CUSHION_UNPRESSED, SoundCategory.BLOCKS, 0.3F, 0.7F); }
-
-    @Override
-    protected void updatePlateState(@Nullable Entity entity, World world, BlockPos pos, BlockState state, int output) {
-        int i = this.getRedstoneOutput(world, pos);
-        boolean bl = output > 0;
-        boolean bl2 = i > 0;
-        if (output != i) {
-            BlockState blockState = this.setRedstoneOutput(state, i);
-            world.setBlockState(pos, blockState, 2);
-            this.updateNeighbors(world, pos);
-            world.scheduleBlockRerenderIfNeeded(pos, state, blockState);
-        }
-
-        if (!bl2 && bl) {
-            this.playDepressSound(world, pos);
-            world.emitGameEvent(entity, GameEvent.BLOCK_UNPRESS, pos);
-        } else if (bl2 && !bl) {
-            this.playPressSound(world, pos);
-            if (world instanceof ServerWorld serverWorld && world.getFluidState(pos).getFluid() != Fluids.WATER) serverWorld.spawnParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 3,0.05,0.5,0.05,0.01);
-            if (world instanceof ServerWorld serverWorld && world.getFluidState(pos).getFluid() == Fluids.WATER) serverWorld.spawnParticles(ParticleTypes.BUBBLE_COLUMN_UP, pos.getX() + 0.5, pos.getY() + 0.2, pos.getZ() + 0.5, 15,0.05,0.5,0.05,0.2);
-            world.emitGameEvent(entity, GameEvent.BLOCK_PRESS, pos);
-        }
-
-        if (bl2) {
-            world.createAndScheduleBlockTick(new BlockPos(pos), this, this.getTickRate());
-        }
-
+    public VoxelShape getShape(BlockState pState, BlockGetter world, BlockPos pPos, CollisionContext pContext) {
+        return this.getSignalForState(pState) > 0 ? PRESSED_SHAPE : DEFAULT_SHAPE;
     }
 
     @Override
-    protected int getRedstoneOutput(World world, BlockPos pos) {
-        Box box = BOX.offset(pos);
+    protected void playOnSound(LevelAccessor world, BlockPos pPos) {
+        world.playSound(null, pPos, YippeeSoundEvents.BLOCK_CUSHION_PRESSED.get(), SoundSource.BLOCKS, 0.5F, 1.0F);
+    }
+
+    @Override
+    protected void playOffSound(LevelAccessor world, BlockPos pPos) {
+        world.playSound(null, pPos, YippeeSoundEvents.BLOCK_CUSHION_UNPRESSED.get(), SoundSource.BLOCKS, 0.3F, 0.7F);
+    }
+
+    @Override
+    protected int getSignalStrength(Level world, BlockPos pPos) {
+        net.minecraft.world.phys.AABB aabb = TOUCH_AABB.move(pPos);
         List list;
-        list = world.getOtherEntities(null, box);
+        list = world.getEntities(null, aabb);
         if (!list.isEmpty()) {
             for (Object o : list) {
                 Entity entity = (Entity) o;
-                if (!entity.canAvoidTraps()) { return 15; }
+                if (!entity.isIgnoringBlockTriggers()) { return 15; }
             }
         }
         return 0;
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        WorldAccess worldAccess = ctx.getWorld();
-        BlockPos blockPos = ctx.getBlockPos();
-        boolean bl = worldAccess.getFluidState(blockPos).getFluid() == Fluids.WATER;
-        return this.getDefaultState().with(WATERLOGGED, bl).with(FACING, ctx.getPlayerFacing().getOpposite());
+    protected int getSignalForState(BlockState pState) {
+        return pState.getValue(PRESSED) ? 15 : 0;
     }
 
     @Override
-    public FluidState getFluidState(BlockState state) { return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state); }
-    @Override
-    public BlockState rotate(BlockState state, BlockRotation rotation) { return state.with(FACING, rotation.rotate(state.get(FACING))); }
-    @Override
-    public BlockState mirror(BlockState state, BlockMirror mirror) { return state.rotate(mirror.getRotation(state.get(FACING))); }
+    protected BlockState setSignalForState(BlockState pState, int pStrength) {
+        return pState.setValue(PRESSED, pStrength > 0);
+    }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) { builder.add(PRESSED, FACING, WATERLOGGED); }
+    protected void checkPressed(@Nullable Entity entity, Level world, BlockPos pos, BlockState state, int output) {
+        int i = this.getSignalStrength(world, pos);
+        boolean bl = output > 0;
+        boolean bl2 = i > 0;
+        if (output != i) {
+            BlockState blockState = this.setSignalForState(state, i);
+            world.setBlock(pos, blockState, 2);
+            this.updateNeighbours(world, pos);
+            world.setBlocksDirty(pos, state, blockState);
+        }
+
+        if (!bl2 && bl) {
+            this.playOffSound(world, pos);
+            world.gameEvent(entity, GameEvent.BLOCK_UNPRESS, pos);
+        } else if (bl2 && !bl) {
+            this.playOnSound(world, pos);
+            if (world instanceof ServerLevel serverLevel && world.getFluidState(pos).getType() != Fluids.WATER) serverLevel.sendParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, 3, 0.05D, 0.5D, 0.05D, 0.01);
+            if (world instanceof ServerLevel serverWorld && world.getFluidState(pos).getType() == Fluids.WATER) serverWorld.sendParticles(ParticleTypes.BUBBLE_COLUMN_UP, pos.getX() + 0.5, pos.getY() + 0.2, pos.getZ() + 0.5, 15,0.05,0.5,0.05,0.2);
+            world.gameEvent(entity, GameEvent.BLOCK_PRESS, pos);
+        }
+
+        if (bl2) {
+            world.scheduleTick(new BlockPos(pos), this, this.getPressedTime());
+        }
+    }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+        Level worldAccess = pContext.getLevel();
+        BlockPos blockPos = pContext.getClickedPos();
+        boolean bl = worldAccess.getFluidState(blockPos).getType() == Fluids.WATER;
+        return this.defaultBlockState().setValue(WATERLOGGED, bl).setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+    }
+
+    @Override
+    public FluidState getFluidState(BlockState pState) {
+        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
+    }
+
+    @Override
+    public BlockState rotate(BlockState pState, Rotation pRotation) {
+        return pState.setValue(FACING, pRotation.rotate(pState.getValue(FACING)));
+    }
+
+    @Override
+    public BlockState mirror(BlockState pState, Mirror pMirror) {
+        return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+        pBuilder.add(PRESSED, FACING, WATERLOGGED);
+    }
 }

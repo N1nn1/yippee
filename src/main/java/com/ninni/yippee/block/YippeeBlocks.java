@@ -1,31 +1,21 @@
 package com.ninni.yippee.block;
 
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
-import net.minecraft.loot.LootTables;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
-import static com.ninni.yippee.Yippee.*;
+import static com.ninni.yippee.Yippee.MOD_ID;
 
+@Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class YippeeBlocks {
 
-    public static final Block WHOOPEE_CUSHION = register("whoopee_cushion", new WhoopeeCushionBlock(AbstractBlock.Settings.of(Material.AGGREGATE).breakInstantly().sounds(BlockSoundGroup.WOOL)));
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
 
+    public static final RegistryObject<Block> WHOOPEE_CUSHION = BLOCKS.register("whoopee_cushion", () -> new WhoopeeCushionBlock(BlockBehaviour.Properties.of(Material.SAND).instabreak().sound(SoundType.WOOL)));
 
-    private static Block register(String id, Block block) {
-        return Registry.register(Registry.BLOCK, new Identifier(MOD_ID, id), block);
-    }
-
-    static {
-        LootTableLoadingCallback.EVENT.register((resourceManager, manager, id, supplier, setter) -> {
-            if (id.equals(LootTables.JUNGLE_TEMPLE_CHEST)) { supplier.copyFrom(manager.getTable(createDefaultLootTable(LootTables.JUNGLE_TEMPLE_CHEST))); }
-        });
-    }
-    private static Identifier createDefaultLootTable(Identifier base) {
-        return new Identifier(base.getNamespace(), "%s/%s".formatted(MOD_ID, base.getPath()));
-    }
 }

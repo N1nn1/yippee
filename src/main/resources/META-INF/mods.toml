@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[32,)"
+license="All rights reserved"
+[[mods]]
+modId="yippee"
+version="1.18.2-1.0.0"
+displayName="Yippee"
+logoFile= "assets/yippee/icon.png"
+credits="You the player!"
+authors="Ninni"
+description='''
+YIPPEEEEEEEEEEEEEEEEEEEEEEE!
+'''
+[[dependencies.yippee]]
+modId="forge"
+mandatory=true
+versionRange="[39,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.yippee]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.18.1,1.19)"
+ordering="NONE"
+side="BOTH"

@@ -1,20 +1,32 @@
 package com.ninni.yippee;
 
-import com.google.common.reflect.Reflection;
 import com.ninni.yippee.block.YippeeBlocks;
+import com.ninni.yippee.events.MiscEvents;
+import com.ninni.yippee.init.YippeeSoundEvents;
 import com.ninni.yippee.item.YippeeItems;
-import com.ninni.yippee.sound.YippeeSoundEvents;
-import net.fabricmc.api.ModInitializer;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-public class Yippee implements ModInitializer {
+@Mod(Yippee.MOD_ID)
+public class Yippee {
 	public static final String MOD_ID = "yippee";
 
-	@Override
-	@SuppressWarnings("UnstableApiUsage")
-	public void onInitialize() {
-		Reflection.initialize(
-		YippeeSoundEvents.class,
-		YippeeBlocks.class,
-		YippeeItems.class);
+	public Yippee() {
+		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+		modEventBus.addListener(this::setup);
+
+		YippeeBlocks.BLOCKS.register(modEventBus);
+		YippeeItems.ITEMS.register(modEventBus);
+		YippeeSoundEvents.SOUND_EVENTS.register(modEventBus);
+
+		MinecraftForge.EVENT_BUS.register(this);
+		MinecraftForge.EVENT_BUS.register(new MiscEvents());
 	}
+
+	private void setup(final FMLCommonSetupEvent event) {
+	}
+
 }
