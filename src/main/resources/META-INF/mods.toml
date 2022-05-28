@@ -5,8 +5,8 @@ license="All rights reserved"
 modId="yippee"
 version="1.18.2-1.0.0"
 displayName="Yippee"
-logoFile= "assets/yippee/icon.png"
-credits="You the player!"
+logoFile= "icon.png"
+credits=""
 authors="Ninni"
 description='''
 YIPPEEEEEEEEEEEEEEEEEEEEEEE!
