@@ -3,7 +3,7 @@ loaderVersion="[32,)"
 license="All rights reserved"
 [[mods]]
 modId="yippee"
-version="1.18.2-1.0.0"
+version="1.19-1.0.0"
 displayName="Yippee"
 logoFile= "icon.png"
 credits=""
@@ -20,6 +20,6 @@ side="BOTH"
 [[dependencies.yippee]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.18.1,1.19)"
+versionRange="[1.19,1.20)"
 ordering="NONE"
 side="BOTH"

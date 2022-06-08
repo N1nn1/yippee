@@ -1,6 +1,5 @@
 package com.ninni.yippee.item;
 
-import com.ninni.yippee.Yippee;
 import com.ninni.yippee.block.YippeeBlocks;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;

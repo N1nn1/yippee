@@ -95,9 +95,6 @@ repositories {
 
 dependencies {
 	minecraft "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
-	implementation fg.deobf("curse.maven:jei-238222:3670531")
-	implementation fg.deobf("curse.maven:jade-324717:3671210")
-//    implementation fg.deobf("curse.maven:oreganized-mod-439153:3741598")
 	annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
 
@@ -105,11 +102,11 @@ jar {
 	manifest {
 		attributes([
 				"Specification-Title"     : "Yippee",
-				"Specification-Vendor"    : "Orcinus, Ninni, Binome",
+				"Specification-Vendor"    : "Ninni",
 				"Specification-Version"   : "1",
 				"Implementation-Title"    : "Yippee",
 				"Implementation-Version"  : "1.0.0",
-				"Implementation-Vendor"   : "Orcinus",
+				"Implementation-Vendor"   : "Ninni",
 				"Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
 				"MixinConfigs"            : "yippee.mixins.json"
 		])

@@ -98,12 +98,12 @@ public class WhoopeeCushionBlock extends BasePressurePlateBlock implements Simpl
 
         if (!bl2 && bl) {
             this.playOffSound(world, pos);
-            world.gameEvent(entity, GameEvent.BLOCK_UNPRESS, pos);
+            world.gameEvent(entity, GameEvent.BLOCK_DEACTIVATE, pos);
         } else if (bl2 && !bl) {
             this.playOnSound(world, pos);
             if (world instanceof ServerLevel serverLevel && world.getFluidState(pos).getType() != Fluids.WATER) serverLevel.sendParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, 3, 0.05D, 0.5D, 0.05D, 0.01);
             if (world instanceof ServerLevel serverWorld && world.getFluidState(pos).getType() == Fluids.WATER) serverWorld.sendParticles(ParticleTypes.BUBBLE_COLUMN_UP, pos.getX() + 0.5, pos.getY() + 0.2, pos.getZ() + 0.5, 15,0.05,0.5,0.05,0.2);
-            world.gameEvent(entity, GameEvent.BLOCK_PRESS, pos);
+            world.gameEvent(entity, GameEvent.BLOCK_ACTIVATE, pos);
         }
 
         if (bl2) {
