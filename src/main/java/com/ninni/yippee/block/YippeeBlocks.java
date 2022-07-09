@@ -1,10 +1,15 @@
 package com.ninni.yippee.block;
 
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
+import com.ninni.yippee.item.YippeeItems;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -21,11 +26,14 @@ public class YippeeBlocks {
     }
 
     static {
-        LootTableLoadingCallback.EVENT.register((resourceManager, manager, id, supplier, setter) -> {
-            if (id.equals(LootTables.JUNGLE_TEMPLE_CHEST)) { supplier.copyFrom(manager.getTable(createDefaultLootTable(LootTables.JUNGLE_TEMPLE_CHEST))); }
+        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+            if (id.equals(LootTables.JUNGLE_TEMPLE_CHEST)) {
+                tableBuilder.pool(LootPool.builder()
+                                          .rolls(UniformLootNumberProvider.create(0, 1))
+                                          .with(ItemEntry.builder(YippeeItems.MOYAI_STATUE)
+                                                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 1))))
+                                          .build());
+            }
         });
-    }
-    private static Identifier createDefaultLootTable(Identifier base) {
-        return new Identifier(base.getNamespace(), "%s/%s".formatted(MOD_ID, base.getPath()));
     }
 }

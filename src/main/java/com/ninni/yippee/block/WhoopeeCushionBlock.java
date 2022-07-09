@@ -74,31 +74,22 @@ public class WhoopeeCushionBlock extends AbstractPressurePlateBlock implements W
 
         if (!bl2 && bl) {
             this.playDepressSound(world, pos);
-            world.emitGameEvent(entity, GameEvent.BLOCK_UNPRESS, pos);
+            world.emitGameEvent(entity, GameEvent.BLOCK_DEACTIVATE, pos);
         } else if (bl2 && !bl) {
             this.playPressSound(world, pos);
             if (world instanceof ServerWorld serverWorld && world.getFluidState(pos).getFluid() != Fluids.WATER) serverWorld.spawnParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 3,0.05,0.5,0.05,0.01);
             if (world instanceof ServerWorld serverWorld && world.getFluidState(pos).getFluid() == Fluids.WATER) serverWorld.spawnParticles(ParticleTypes.BUBBLE_COLUMN_UP, pos.getX() + 0.5, pos.getY() + 0.2, pos.getZ() + 0.5, 15,0.05,0.5,0.05,0.2);
-            world.emitGameEvent(entity, GameEvent.BLOCK_PRESS, pos);
+            world.emitGameEvent(entity, GameEvent.BLOCK_ACTIVATE, pos);
         }
 
-        if (bl2) {
-            world.createAndScheduleBlockTick(new BlockPos(pos), this, this.getTickRate());
-        }
+        if (bl2) world.createAndScheduleBlockTick(new BlockPos(pos), this, this.getTickRate());
 
     }
 
     @Override
     protected int getRedstoneOutput(World world, BlockPos pos) {
-        Box box = BOX.offset(pos);
-        List list;
-        list = world.getOtherEntities(null, box);
-        if (!list.isEmpty()) {
-            for (Object o : list) {
-                Entity entity = (Entity) o;
-                if (!entity.canAvoidTraps()) { return 15; }
-            }
-        }
+        List<Entity> list = world.getOtherEntities(null, BOX.offset(pos));
+        if (!list.isEmpty()) for (Entity entity : list) if (!entity.canAvoidTraps()) return 15;
         return 0;
     }
 
