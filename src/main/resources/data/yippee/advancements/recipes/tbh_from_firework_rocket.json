@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "yippee:tbh"
+    ]
+  },
+  "criteria": {
+    "has_firework_rocket": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:firework_rocket"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "yippee:tbh_from_firework_rocket"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_firework_rocket",
+      "has_the_recipe"
+    ]
+  ]
+}
