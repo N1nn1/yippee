@@ -11,7 +11,6 @@ import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.texture.SpriteAtlasTexture;
-import net.minecraft.client.util.SpriteIdentifier;
 
 public class YippeeClient implements ClientModInitializer {
 
@@ -28,4 +27,3 @@ public class YippeeClient implements ClientModInitializer {
         );
     }
 }
-
