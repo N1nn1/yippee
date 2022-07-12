@@ -4,7 +4,8 @@
   "package": "com.ninni.yippee.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "FallingBlockEntityMixin"
+    "FallingBlockEntityMixin",
+    "LivingEntityMixin"
   ],
   "client": [
     "client.LivingEntityRendererMixin"

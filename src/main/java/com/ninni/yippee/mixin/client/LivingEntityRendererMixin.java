@@ -1,6 +1,6 @@
 package com.ninni.yippee.mixin.client;
 
-import com.ninni.yippee.entity.effect.YippeeStatusEffects;
+import com.ninni.yippee.entity.LivingEntityAccess;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.LivingEntityRenderer;
@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class LivingEntityRendererMixin<T extends LivingEntity, M extends EntityModel<T>> {
     @Inject(method = "setupTransforms", at = @At("TAIL"))
     private void onSetUpTransforms(T entity, MatrixStack matrices, float animationProgress, float bodyYaw, float tickDelta, CallbackInfo ci) {
-        if (entity.hasStatusEffect(YippeeStatusEffects.FLATTENED)) {
+        if (((LivingEntityAccess) entity).isFlattened()) {
             matrices.scale(1, 0.01F, 1);
             if (entity.isInSneakingPose()) matrices.translate(0, 15F, 0);
         }
