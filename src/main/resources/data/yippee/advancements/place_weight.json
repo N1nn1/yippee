@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:story/smelt_iron",
+  "criteria": {
+    "weight": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "yippee:weight"
+      }
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "yippee:weight"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.yippee.place_weight.title"
+    },
+    "description": {
+      "translate": "advancements.yippee.place_weight.description"
+    }
+  },
+  "requirements": [
+    [
+      "weight"
+    ]
+  ]
+}
