@@ -4,11 +4,14 @@
 
   "block.yippee.whoopee_cushion": "Cuscinetto rumoroso",
 
+  "block.yippee.taco_bell": "Taco bell",
+
   "advancements.yippee.obtain_tbh.title": "||⚍!¡!¡╎",
   "advancements.yippee.obtain_tbh.description": "Ottieni la creatura dall'immensa gioia",
 
   "subtitles.item.yippee.tbh.yippee": "tbh scoppia di gioia",
   "subtitles.item.yippee.moyai.boom": "Potere antico si sprigiona",
   "subtitles.block.yippee.whoopee_cushion.pressed": "Cuscinetto si sgonfia",
-  "subtitles.block.yippee.whoopee_cushion.unpressed": "Cuscinetto si gonfia"
+  "subtitles.block.yippee.whoopee_cushion.unpressed": "Cuscinetto si gonfia",
+  "subtitles.block.yippee.taco_bell.ring": "Taco bell rintocca"
 }

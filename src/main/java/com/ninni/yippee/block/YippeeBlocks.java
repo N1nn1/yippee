@@ -2,7 +2,7 @@ package com.ninni.yippee.block;
 
 import com.ninni.yippee.item.YippeeItems;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
-import net.minecraft.block.AbstractBlock;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.loot.LootPool;
@@ -15,15 +15,14 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 import static com.ninni.yippee.Yippee.*;
+import static net.minecraft.block.Blocks.*;
 
 public class YippeeBlocks {
 
-    public static final Block WHOOPEE_CUSHION = register("whoopee_cushion", new WhoopeeCushionBlock(AbstractBlock.Settings.of(Material.AGGREGATE).breakInstantly().sounds(BlockSoundGroup.WOOL)));
+    public static final Block WHOOPEE_CUSHION = register("whoopee_cushion", new WhoopeeCushionBlock(FabricBlockSettings.of(Material.AGGREGATE).breakInstantly().sounds(BlockSoundGroup.WOOL)));
+    public static final Block TACO_BELL = register("taco_bell", new TacoBellBlock(FabricBlockSettings.copyOf(BELL)));
 
-
-    private static Block register(String id, Block block) {
-        return Registry.register(Registry.BLOCK, new Identifier(MOD_ID, id), block);
-    }
+    private static Block register(String id, Block block) { return Registry.register(Registry.BLOCK, new Identifier(MOD_ID, id), block); }
 
     static {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {

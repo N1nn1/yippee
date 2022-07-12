@@ -19,6 +19,9 @@ public interface YippeeSoundEvents {
     SoundEvent BLOCK_CUSHION_UNPRESSED   = whoopee_cushion("unpressed");
     private static SoundEvent whoopee_cushion(String type) { return createBlockSound("whoopee_cushion", type); }
 
+    SoundEvent TACO_BELL_RING   = taco_bell("ring");
+    private static SoundEvent taco_bell(String type) { return createBlockSound("taco_bell", type); }
+
 
     private static SoundEvent register(String id) {
         Identifier identifier = new Identifier(MOD_ID, id);

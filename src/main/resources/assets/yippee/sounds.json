@@ -20,5 +20,9 @@
   "block.whoopee_cushion.unpressed": {
     "sounds": [ "yippee:block/whoopee_cushion/unpressed" ],
     "subtitle": "subtitles.block.yippee.whoopee_cushion.unpressed"
+  },
+  "block.taco_bell.ring": {
+    "sounds": [ "yippee:block/taco_bell/ring" ],
+    "subtitle": "subtitles.block.yippee.taco_bell.ring"
   }
 }

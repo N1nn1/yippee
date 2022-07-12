@@ -4,11 +4,14 @@
 
   "block.yippee.whoopee_cushion": "Whoopee Cushion",
 
+  "block.yippee.taco_bell": "Taco Bell",
+
   "advancements.yippee.obtain_tbh.title": "Yippee",
   "advancements.yippee.obtain_tbh.description": "Obtain the creature of immense excitement",
 
   "subtitles.item.yippee.tbh.yippee": "tbh bursts of excitement",
   "subtitles.item.yippee.moyai.boom": "Ancient power awakens",
   "subtitles.block.yippee.whoopee_cushion.pressed": "Cushion deflates",
-  "subtitles.block.yippee.whoopee_cushion.unpressed": "Cushion inflates"
+  "subtitles.block.yippee.whoopee_cushion.unpressed": "Cushion inflates",
+  "subtitles.block.yippee.taco_bell.ring": "Taco Bell Rings"
 }
