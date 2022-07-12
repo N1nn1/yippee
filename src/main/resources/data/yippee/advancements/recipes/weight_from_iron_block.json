@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "yippee:weight"
+    ]
+  },
+  "criteria": {
+    "has_iron_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_block"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "yippee:weight_from_iron_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_iron_block",
+      "has_the_recipe"
+    ]
+  ]
+}

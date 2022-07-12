@@ -4,6 +4,7 @@ import com.ninni.yippee.item.YippeeItems;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
@@ -21,7 +22,7 @@ public class YippeeBlocks {
 
     public static final Block WHOOPEE_CUSHION = register("whoopee_cushion", new WhoopeeCushionBlock(FabricBlockSettings.of(Material.AGGREGATE).breakInstantly().sounds(BlockSoundGroup.WOOL)));
     public static final Block TACO_BELL = register("taco_bell", new TacoBellBlock(FabricBlockSettings.copyOf(BELL)));
-    public static final Block WEIGHT = register("weight", new WeightBlock(FabricBlockSettings.copyOf(ANVIL)));
+    public static final Block WEIGHT = register("weight", new WeightBlock(FabricBlockSettings.of(Material.METAL, MapColor.IRON_GRAY).requiresTool().strength(10.0f, 1200.0f).sounds(BlockSoundGroup.ANVIL)));
 
     private static Block register(String id, Block block) { return Registry.register(Registry.BLOCK, new Identifier(MOD_ID, id), block); }
 
