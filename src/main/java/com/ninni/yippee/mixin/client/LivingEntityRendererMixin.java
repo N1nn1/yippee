@@ -19,6 +19,7 @@ public class LivingEntityRendererMixin<T extends LivingEntity, M extends EntityM
     private void onSetUpTransforms(T entity, MatrixStack matrices, float animationProgress, float bodyYaw, float tickDelta, CallbackInfo ci) {
         if (((LivingEntityAccess) entity).isFlattened()) {
             matrices.scale(1, 0.01F, 1);
+            entity.getEyePos().subtract(0,5,0);
             if (entity.isInSneakingPose()) matrices.translate(0, 15F, 0);
         }
     }

@@ -115,7 +115,7 @@ public class TacoBellBlock extends BlockWithEntity {
         if (!world.isClient && blockEntity instanceof TacoBellBlockEntity) {
             if (direction == null) direction = world.getBlockState(pos).get(FACING);
             ((TacoBellBlockEntity)blockEntity).activate(direction);
-            world.playSound(null, pos, YippeeSoundEvents.TACO_BELL_RING, SoundCategory.BLOCKS, 2.0f, 1.0f);
+            world.playSound(null, pos, YippeeSoundEvents.BLOCK_TACO_BELL_RING, SoundCategory.BLOCKS, 2.0f, 1.0f);
             world.emitGameEvent(entity, GameEvent.BLOCK_CHANGE, pos);
             return true;
         }

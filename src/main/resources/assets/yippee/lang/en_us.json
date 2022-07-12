@@ -7,6 +7,8 @@
   "block.yippee.taco_bell": "Taco Bell",
 
   "block.yippee.weight": "Weight",
+  "death.attack.weight": "%1$s was flattened by an immense weight",
+  "death.attack.weight.player": "%1$s was flattened by an immense weight whilst fighting %2$s",
 
   "effect.yippee.flattened": "Flattened",
 
@@ -17,5 +19,6 @@
   "subtitles.item.yippee.moyai.boom": "Ancient power awakens",
   "subtitles.block.yippee.whoopee_cushion.pressed": "Cushion deflates",
   "subtitles.block.yippee.whoopee_cushion.unpressed": "Cushion inflates",
-  "subtitles.block.yippee.taco_bell.ring": "Taco Bell Rings"
+  "subtitles.block.yippee.taco_bell.ring": "Taco Bell Rings",
+  "subtitles.block.yippee.weight.fall": "Weight Drops"
 }

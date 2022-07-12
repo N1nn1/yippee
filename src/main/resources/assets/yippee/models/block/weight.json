@@ -4,6 +4,7 @@
 		"0": "yippee:block/weight_bottom",
 		"1": "yippee:block/weight_side",
 		"2": "yippee:block/weight_top",
+		"3": "yippee:block/weight_front",
 		"particle": "yippee:block/weight_bottom"
 	},
 	"elements": [
@@ -11,7 +12,7 @@
 			"from": [0, 0, 0],
 			"to": [16, 14, 16],
 			"faces": {
-				"north": {"uv": [0, 2, 16, 16], "texture": "#1"},
+				"north": {"uv": [0, 2, 16, 16], "texture": "#3"},
 				"east": {"uv": [0, 2, 16, 16], "texture": "#1"},
 				"south": {"uv": [0, 2, 16, 16], "texture": "#1"},
 				"west": {"uv": [0, 2, 16, 16], "texture": "#1"},

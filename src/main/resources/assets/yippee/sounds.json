@@ -24,5 +24,9 @@
   "block.taco_bell.ring": {
     "sounds": [ "yippee:block/taco_bell/ring" ],
     "subtitle": "subtitles.block.yippee.taco_bell.ring"
+  },
+  "block.weight.fall": {
+    "sounds": [ "yippee:block/weight/fall" ],
+    "subtitle": "subtitles.block.yippee.weight.fall"
   }
 }

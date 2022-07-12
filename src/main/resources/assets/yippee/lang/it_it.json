@@ -6,6 +6,12 @@
 
   "block.yippee.taco_bell": "Taco bell",
 
+  "block.yippee.weight": "Peso",
+  "death.attack.weight": "%1$s è stato spiaccicato da un enorme peso",
+  "death.attack.weight.player": "%1$s è stato spiaccicato da un enorme peso mentre lottava con %2$s",
+
+  "effect.yippee.flattened": "Spiaccicato",
+
   "advancements.yippee.obtain_tbh.title": "||⚍!¡!¡╎",
   "advancements.yippee.obtain_tbh.description": "Ottieni la creatura dall'immensa gioia",
 
@@ -13,5 +19,6 @@
   "subtitles.item.yippee.moyai.boom": "Potere antico si sprigiona",
   "subtitles.block.yippee.whoopee_cushion.pressed": "Cuscinetto si sgonfia",
   "subtitles.block.yippee.whoopee_cushion.unpressed": "Cuscinetto si gonfia",
-  "subtitles.block.yippee.taco_bell.ring": "Taco bell rintocca"
+  "subtitles.block.yippee.taco_bell.ring": "Taco bell rintocca",
+  "subtitles.block.yippee.weight.fall": "Peso cade"
 }

@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "yippee:block/weight",
+      "y": 90
+    },
+    "facing=north": {
       "model": "yippee:block/weight"
+    },
+    "facing=south": {
+      "model": "yippee:block/weight",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "yippee:block/weight",
+      "y": 270
     }
   }
 }
