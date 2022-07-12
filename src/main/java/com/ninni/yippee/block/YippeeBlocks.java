@@ -21,6 +21,7 @@ public class YippeeBlocks {
 
     public static final Block WHOOPEE_CUSHION = register("whoopee_cushion", new WhoopeeCushionBlock(FabricBlockSettings.of(Material.AGGREGATE).breakInstantly().sounds(BlockSoundGroup.WOOL)));
     public static final Block TACO_BELL = register("taco_bell", new TacoBellBlock(FabricBlockSettings.copyOf(BELL)));
+    public static final Block WEIGHT = register("weight", new WeightBlock(FabricBlockSettings.copyOf(ANVIL)));
 
     private static Block register(String id, Block block) { return Registry.register(Registry.BLOCK, new Identifier(MOD_ID, id), block); }
 
