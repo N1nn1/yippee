@@ -28,5 +28,13 @@
   "block.weight.fall": {
     "sounds": [ "yippee:block/weight/fall" ],
     "subtitle": "subtitles.block.yippee.weight.fall"
+  },
+  "item.damaged_disc.scratch": {
+    "sounds": [ "yippee:item/discs/record_scratch1" ],
+    "subtitle": "subtitles.item.yippee.disc.scratch"
+  },
+  "item.broken_disc.scratch": {
+    "sounds": [ "yippee:item/discs/record_scratch2" ],
+    "subtitle": "subtitles.item.yippee.disc.scratch"
   }
 }

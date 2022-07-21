@@ -10,6 +10,11 @@
   "death.attack.weight": "%1$s è stato spiaccicato da un enorme peso",
   "death.attack.weight.player": "%1$s è stato spiaccicato da un enorme peso mentre lottava con %2$s",
 
+  "item.yippee.damaged_disc": "Disco danneggiato",
+  "item.yippee.damaged_disc.desc": "ᓭᓭᓭᓭᓭᓭ...",
+  "item.yippee.broken_disc": "Disco distrutto",
+  "item.yippee.broken_disc.desc": "∴⍑ᔑℸ ̣ 'ᓭ ⚍!¡",
+
   "effect.yippee.flattened": "Spiaccicato",
 
   "advancements.yippee.obtain_tbh.title": "||⚍!¡!¡╎",
@@ -22,5 +27,6 @@
   "subtitles.block.yippee.whoopee_cushion.pressed": "Cuscinetto si sgonfia",
   "subtitles.block.yippee.whoopee_cushion.unpressed": "Cuscinetto si gonfia",
   "subtitles.block.yippee.taco_bell.ring": "Taco bell rintocca",
-  "subtitles.block.yippee.weight.fall": "Peso cade"
+  "subtitles.block.yippee.weight.fall": "Peso cade",
+  "subtitles.item.yippee.disc.scratch": "Disco graffia"
 }

@@ -10,6 +10,11 @@
   "death.attack.weight": "%1$s was flattened by an immense weight",
   "death.attack.weight.player": "%1$s was flattened by an immense weight whilst fighting %2$s",
 
+  "item.yippee.damaged_disc": "Damaged Disc",
+  "item.yippee.damaged_disc.desc": "ᓭᓭᓭᓭᓭᓭ...",
+  "item.yippee.broken_disc": "Broken Disc",
+  "item.yippee.broken_disc.desc": "∴⍑ᔑℸ ̣ 'ᓭ ⚍!¡",
+
   "effect.yippee.flattened": "Flattened",
 
   "advancements.yippee.obtain_tbh.title": "Yippee",
@@ -18,9 +23,10 @@
   "advancements.yippee.place_weight.description": "Place a Weight block and get up to mischief",
 
   "subtitles.item.yippee.tbh.yippee": "tbh bursts of excitement",
-  "subtitles.item.yippee.moyai.boom": "Ancient power awakens",
+  "subtitles.item.yippee.moyai.boom": "Ancient Power awakens",
   "subtitles.block.yippee.whoopee_cushion.pressed": "Cushion deflates",
   "subtitles.block.yippee.whoopee_cushion.unpressed": "Cushion inflates",
   "subtitles.block.yippee.taco_bell.ring": "Taco Bell Rings",
-  "subtitles.block.yippee.weight.fall": "Weight Drops"
+  "subtitles.block.yippee.weight.fall": "Weight Drops",
+  "subtitles.item.yippee.disc.scratch": "Disc Scratches"
 }
