@@ -4,9 +4,9 @@
     "subtitle": "subtitles.item.yippee.tbh.yippee"
   },
   "item.moyai.boom": {
-  "sounds": [ "yippee:item/moyai/boom" ],
-  "subtitle": "subtitles.item.yippee.moyai.boom"
- },
+    "sounds": [ "yippee:item/moyai/boom" ],
+    "subtitle": "subtitles.item.yippee.moyai.boom"
+  },
   "block.whoopee_cushion.pressed": {
     "sounds": [
       "yippee:block/whoopee_cushion/pressed1",
@@ -20,5 +20,21 @@
   "block.whoopee_cushion.unpressed": {
     "sounds": [ "yippee:block/whoopee_cushion/unpressed" ],
     "subtitle": "subtitles.block.yippee.whoopee_cushion.unpressed"
+  },
+  "block.taco_bell.ring": {
+    "sounds": [ "yippee:block/taco_bell/ring" ],
+    "subtitle": "subtitles.block.yippee.taco_bell.ring"
+  },
+  "block.weight.fall": {
+    "sounds": [ "yippee:block/weight/fall" ],
+    "subtitle": "subtitles.block.yippee.weight.fall"
+  },
+  "item.damaged_disc.scratch": {
+    "sounds": [ "yippee:item/discs/record_scratch1" ],
+    "subtitle": "subtitles.item.yippee.disc.scratch"
+  },
+  "item.broken_disc.scratch": {
+    "sounds": [ "yippee:item/discs/record_scratch2" ],
+    "subtitle": "subtitles.item.yippee.disc.scratch"
   }
 }

@@ -3,8 +3,13 @@
   "minVersion": "0.8",
   "package": "com.ninni.yippee.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [],
-  "client": [],
+  "mixins": [
+    "FallingBlockEntityMixin",
+    "LivingEntityMixin"
+  ],
+  "client": [
+    "client.LivingEntityRendererMixin"
+  ],
   "injectors": {
     "defaultRequire": 1 }
 }
