@@ -37,8 +37,9 @@ public class ClientEvents {
     }
 
     @SubscribeEvent
-    public static void onTexturesStitch(TextureStitchEvent.Pre event) {
-        event.addSprite(TacoBellBlockEntityRenderer.BELL_BODY_TEXTURE);
+    public static void onTextureStitch(TextureStitchEvent.Pre event) {
+        if (event.getAtlas().location().equals(TextureAtlas.LOCATION_BLOCKS)) {
+            event.addSprite(TacoBellBlockEntityRenderer.BELL_BODY_TEXTURE);
+        }
     }
-
 }

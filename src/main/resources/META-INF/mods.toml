@@ -3,7 +3,7 @@ loaderVersion="[32,)"
 license="All rights reserved"
 [[mods]]
 modId="yippee"
-version="1.19-1.0.0"
+version="1.19-2.0.0"
 displayName="Yippee"
 logoFile= "icon.png"
 credits=""
