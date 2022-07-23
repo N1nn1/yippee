@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 @Mod.EventBusSubscriber(modid = Yippee.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class YippeeBlockEntityTypes {
 
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, Yippee.MOD_ID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Yippee.MOD_ID);
 
     public static final RegistryObject<BlockEntityType<TacoBellBlockEntity>> TACO_BELL = BLOCK_ENTITIES.register("taco_bell", () -> BlockEntityType.Builder.of(TacoBellBlockEntity::new, YippeeBlocks.TACO_BELL.get()).build(null));
 

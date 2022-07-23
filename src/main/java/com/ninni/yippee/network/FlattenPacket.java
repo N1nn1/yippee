@@ -38,7 +38,6 @@ public class FlattenPacket {
     public static void handle(FlattenPacket packet, Supplier<NetworkEvent.Context> ctx) {
         ctx.get().enqueueWork(() -> {
             Minecraft minecraft = Minecraft.getInstance();
-            LocalPlayer clientPlayer = minecraft.player;
             Optional.ofNullable(minecraft.level).ifPresent(world -> {
                 int id = packet.getEntityId();
                 Optional.ofNullable(minecraft.level.getEntity(id))

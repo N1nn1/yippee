@@ -1,8 +1,9 @@
 {
   "required": true,
-  "minVersion": "0.8",
   "package": "com.ninni.yippee.mixin",
   "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "refmap": "yippee.refmap.json",
   "mixins": [
     "FallingBlockEntityMixin",
     "LivingEntityMixin"
