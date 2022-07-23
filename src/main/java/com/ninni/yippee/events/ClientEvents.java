@@ -1,16 +1,14 @@
 package com.ninni.yippee.events;
 
 import com.ninni.yippee.Yippee;
-import com.ninni.yippee.block.YippeeBlocks;
+import com.ninni.yippee.init.YippeeBlocks;
 import com.ninni.yippee.client.render.block.TacoBellBlockEntityRenderer;
 import com.ninni.yippee.init.YippeeBlockEntityTypes;
 import com.ninni.yippee.init.YippeeModelLayers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

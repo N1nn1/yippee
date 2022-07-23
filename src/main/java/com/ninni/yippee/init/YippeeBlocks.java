@@ -1,5 +1,8 @@
-package com.ninni.yippee.block;
+package com.ninni.yippee.init;
 
+import com.ninni.yippee.block.TacoBellBlock;
+import com.ninni.yippee.block.WeightBlock;
+import com.ninni.yippee.block.WhoopeeCushionBlock;
 import com.ninni.yippee.init.YippeeSoundEvents;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;

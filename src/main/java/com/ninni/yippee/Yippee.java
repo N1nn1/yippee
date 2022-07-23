@@ -1,12 +1,11 @@
 package com.ninni.yippee;
 
-import com.ninni.yippee.block.YippeeBlocks;
-import com.ninni.yippee.effects.YippeeMobEffect;
-import com.ninni.yippee.effects.YippeeMobEffects;
+import com.ninni.yippee.init.YippeeBlocks;
+import com.ninni.yippee.init.YippeeMobEffects;
 import com.ninni.yippee.events.MiscEvents;
 import com.ninni.yippee.init.YippeeBlockEntityTypes;
 import com.ninni.yippee.init.YippeeSoundEvents;
-import com.ninni.yippee.item.YippeeItems;
+import com.ninni.yippee.init.YippeeItems;
 import com.ninni.yippee.network.YippeeNetworkHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;

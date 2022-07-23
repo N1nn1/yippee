@@ -1,7 +1,6 @@
 package com.ninni.yippee.init;
 
 import com.ninni.yippee.Yippee;
-import com.ninni.yippee.block.YippeeBlocks;
 import com.ninni.yippee.block.blockentities.TacoBellBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.fml.common.Mod;

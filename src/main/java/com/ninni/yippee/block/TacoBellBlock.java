@@ -66,7 +66,7 @@ public class TacoBellBlock extends BaseEntityBlock {
     private static final VoxelShape SOUTH_WALL_SHAPE = Shapes.or(BELL_SHAPE, Block.box(7.0, 13.0, 3.0, 9.0, 15.0, 16.0));
     private static final VoxelShape HANGING_SHAPE = Shapes.or(BELL_SHAPE, Block.box(7.0, 13.0, 7.0, 9.0, 16.0, 9.0));
 
-    protected TacoBellBlock(Properties properties) { super(properties); }
+    public TacoBellBlock(Properties properties) { super(properties); }
 
     @Override
     public void neighborChanged(BlockState state, Level world, BlockPos pos, Block p_60512_, BlockPos p_60513_, boolean p_60514_) {

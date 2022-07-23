@@ -1,7 +1,9 @@
-package com.ninni.yippee.item;
+package com.ninni.yippee.init;
 
-import com.ninni.yippee.block.YippeeBlocks;
+import com.ninni.yippee.init.YippeeBlocks;
 import com.ninni.yippee.init.YippeeSoundEvents;
+import com.ninni.yippee.item.MoyaiStatueItem;
+import com.ninni.yippee.item.TBHItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;

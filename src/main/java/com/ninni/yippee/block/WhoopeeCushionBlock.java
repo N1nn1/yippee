@@ -40,7 +40,7 @@ public class WhoopeeCushionBlock extends BasePressurePlateBlock implements Simpl
     public static final BooleanProperty PRESSED = YippeeProperties.PRESSED;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    protected WhoopeeCushionBlock(Properties settings) {
+    public WhoopeeCushionBlock(Properties settings) {
         super(settings);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(PRESSED, false).setValue(WATERLOGGED, false));
     }
@@ -62,13 +62,12 @@ public class WhoopeeCushionBlock extends BasePressurePlateBlock implements Simpl
 
     @Override
     protected int getSignalStrength(Level world, BlockPos pPos) {
-        net.minecraft.world.phys.AABB aabb = TOUCH_AABB.move(pPos);
-        List list;
-        list = world.getEntities(null, aabb);
+        List<Entity> list = world.getEntities(null, TOUCH_AABB.move(pPos));
         if (!list.isEmpty()) {
-            for (Object o : list) {
-                Entity entity = (Entity) o;
-                if (!entity.isIgnoringBlockTriggers()) { return 15; }
+            for (Entity entity : list) {
+                if (!entity.isIgnoringBlockTriggers()) {
+                    return 15;
+                }
             }
         }
         return 0;

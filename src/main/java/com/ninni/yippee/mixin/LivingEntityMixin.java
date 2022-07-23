@@ -1,7 +1,6 @@
 package com.ninni.yippee.mixin;
 
-import com.ninni.yippee.effects.YippeeMobEffect;
-import com.ninni.yippee.effects.YippeeMobEffects;
+import com.ninni.yippee.init.YippeeMobEffects;
 import com.ninni.yippee.entities.LivingEntityAccess;
 import com.ninni.yippee.network.FlattenPacket;
 import com.ninni.yippee.network.YippeeNetworkHandler;

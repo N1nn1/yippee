@@ -1,6 +1,6 @@
 package com.ninni.yippee.block;
 
-import com.ninni.yippee.effects.YippeeMobEffects;
+import com.ninni.yippee.init.YippeeMobEffects;
 import com.ninni.yippee.entities.damagesource.YippeeDamageSource;
 import com.ninni.yippee.init.YippeeSoundEvents;
 import net.minecraft.core.BlockPos;

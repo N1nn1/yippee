@@ -1,6 +1,7 @@
-package com.ninni.yippee.effects;
+package com.ninni.yippee.init;
 
 import com.ninni.yippee.Yippee;
+import com.ninni.yippee.effects.YippeeMobEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraftforge.fml.common.Mod;
