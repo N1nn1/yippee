@@ -3,8 +3,8 @@ package com.ninni.yippee;
 import com.google.common.reflect.Reflection;
 import com.ninni.yippee.block.YippeeBlocks;
 import com.ninni.yippee.block.entity.YippeeBlockEntityType;
-import com.ninni.yippee.client.YippeeEntityModelLayers;
-import com.ninni.yippee.client.render.block.TacoBellBlockEntityRenderer;
+import com.ninni.yippee.entity.effect.client.YippeeEntityModelLayers;
+import com.ninni.yippee.entity.effect.client.render.block.TacoBellBlockEntityRenderer;
 import com.ninni.yippee.entity.LivingEntityAccess;
 import com.ninni.yippee.util.YippeePacketIdentifiers;
 import net.fabricmc.api.ClientModInitializer;
@@ -19,6 +19,7 @@ import net.minecraft.entity.LivingEntity;
 import java.util.Optional;
 
 public class YippeeClient implements ClientModInitializer {
+
     @SuppressWarnings("UnstableApiUsage, deprecation")
     @Override
     public void onInitializeClient() {
@@ -32,17 +33,15 @@ public class YippeeClient implements ClientModInitializer {
             YippeeBlocks.WEIGHT
         );
 
-        ClientPlayNetworking.registerGlobalReceiver(YippeePacketIdentifiers.FLATTEN, (client, handler, buf, sender) -> {
-            Optional.ofNullable(client.world).ifPresent(world -> {
-                int id = buf.readInt();
-                Optional.ofNullable(client.world.getEntityById(id))
-                        .filter(LivingEntity.class::isInstance)
-                        .map(LivingEntityAccess.class::cast)
-                        .ifPresent(entity -> {
-                            boolean flattened = buf.readBoolean();
-                            entity.setFlattened(flattened);
-                        });
-            });
-        });
+        ClientPlayNetworking.registerGlobalReceiver(YippeePacketIdentifiers.FLATTEN, (client, handler, buf, sender) -> Optional.ofNullable(client.world).ifPresent(world -> {
+            int id = buf.readInt();
+            Optional.ofNullable(client.world.getEntityById(id))
+                    .filter(LivingEntity.class::isInstance)
+                    .map(LivingEntityAccess.class::cast)
+                    .ifPresent(entity -> {
+                        boolean flattened = buf.readBoolean();
+                        entity.setFlattened(flattened);
+                    });
+        }));
     }
 }

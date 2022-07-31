@@ -7,9 +7,22 @@
   "description": "YIPPEEEEEEEEEEEEEEEEEEEEEEE!",
   "authors": ["Ninni"],
   "contributors": ["Orcinus"],
-  "contact": { "sources": "https://github.com/N1nn1/yippee" },
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/yippee",
+    "sources": "https://github.com/N1nn1/yippee",
+    "issues": "https://github.com/N1nn1/yippee/issues"
+  },
+  "custom": {
+    "modmenu": { "links": {
+      "mod.yippee.contact.discord": "https://discord.moddingplayground.net",
+      "mod.yippee.wiki": "https://github.com/N1nn1/yippee/wiki"
+    } }
+  },
 
-  "license": "CC0-1.0",
+  "license": [
+    "MIT (Code)",
+    "All Rights Reserved (Assets)"
+  ],
   "icon": "assets/yippee/icon.png",
 
   "environment": "*",
@@ -20,10 +33,9 @@
   "mixins": ["yippee.mixins.json"],
 
   "depends": {
-    "fabricloader": ">=0.14.6",
+    "fabricloader": ">=0.14",
     "fabric": "*",
-    "minecraft": "1.19.x",
+    "minecraft": ">=1.19",
     "java": ">=17"
-  },
-  "suggests": { "another-mod": "*" }
+  }
 }

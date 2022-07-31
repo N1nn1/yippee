@@ -1,7 +1,7 @@
-package com.ninni.yippee.client.render.block;
+package com.ninni.yippee.entity.effect.client.render.block;
 
 import com.ninni.yippee.block.entity.TacoBellBlockEntity;
-import com.ninni.yippee.client.YippeeEntityModelLayers;
+import com.ninni.yippee.entity.effect.client.YippeeEntityModelLayers;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.model.ModelData;

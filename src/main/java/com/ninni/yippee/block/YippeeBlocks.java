@@ -31,9 +31,8 @@ public class YippeeBlocks {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             if (id.equals(LootTables.JUNGLE_TEMPLE_CHEST)) {
                 tableBuilder.pool(LootPool.builder()
-                                          .rolls(UniformLootNumberProvider.create(0, 1))
                                           .with(ItemEntry.builder(YippeeItems.MOYAI_STATUE)
-                                                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 1))))
+                                                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0, 1))))
                                           .build());
             }
         });
