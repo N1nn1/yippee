@@ -21,7 +21,7 @@ public class MiscEvents {
         LootTable table = event.getTable();
         ResourceLocation name = event.getName();
         if (name.equals(BuiltInLootTables.JUNGLE_TEMPLE)) {
-            table.addPool(LootPool.lootPool().add(LootItem.lootTableItem(YippeeItems.MOYAI_STATUE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))).build());
+            table.addPool(LootPool.lootPool().add(LootItem.lootTableItem(YippeeItems.MOYAI_STATUE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))).build());
         }
     }
 
