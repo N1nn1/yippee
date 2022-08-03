@@ -22,14 +22,11 @@ public class TBHItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player user, InteractionHand hand) {
-        if (world.isClientSide()) {
-            world.playSound(user, user, YippeeSoundEvents.ITEM_CREATURE_YIPPEE.get(), SoundSource.MASTER, 1.5F, 1.0F);
-            user.getCooldowns().addCooldown(this, 8);
-            user.awardStat(Stats.ITEM_USED.get(this));
-            Vec3 vec3d = user.getBoundingBox().getCenter();
-            if (world instanceof ServerLevel serverWorld) serverWorld.sendParticles(ParticleTypes.ENTITY_EFFECT, vec3d.x, vec3d.y - 0.15, vec3d.z, 100, 0, 0, 0, 1.75D);
-            return InteractionResultHolder.sidedSuccess(user.getItemInHand(hand), world.isClientSide());
-        }
-        return null;
+        world.playSound(user, user, YippeeSoundEvents.ITEM_CREATURE_YIPPEE.get(), SoundSource.MASTER, 1.5F, 1.0F);
+        user.getCooldowns().addCooldown(this, 8);
+        user.awardStat(Stats.ITEM_USED.get(this));
+        Vec3 vec3d = user.getBoundingBox().getCenter();
+        if (world instanceof ServerLevel serverWorld) serverWorld.sendParticles(ParticleTypes.ENTITY_EFFECT, vec3d.x, vec3d.y - 0.15, vec3d.z, 100, 0, 0, 0, 1.75D);
+        return InteractionResultHolder.sidedSuccess(user.getItemInHand(hand), world.isClientSide());
     }
 }
