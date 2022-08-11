@@ -27,8 +27,8 @@ public class YippeeItems {
     public static final RegistryObject<Item> WHOOPEE_CUSHION = ITEMS.register("whoopee_cushion", () -> new BlockItem(YippeeBlocks.WHOOPEE_CUSHION.get(), new Item.Properties().tab(Yippee.TAB).stacksTo(16)));
     public static final RegistryObject<Item> TACO_BELL = ITEMS.register("taco_bell", () -> new BlockItem(YippeeBlocks.TACO_BELL.get(), new Item.Properties().tab(Yippee.TAB)));
     public static final RegistryObject<Item> WEIGHT = ITEMS.register("weight", () -> new BlockItem(YippeeBlocks.WEIGHT.get(), new Item.Properties().tab(Yippee.TAB)));
-    public static final RegistryObject<Item> DAMAGED_DISC = ITEMS.register("damaged_disc", () -> new RecordItem(15, YippeeSoundEvents.ITEM_RECORD_SCRATCH1, new Item.Properties().stacksTo(1).tab(Yippee.TAB).rarity(Rarity.RARE)));
-    public static final RegistryObject<Item> BROKEN_DISC = ITEMS.register("broken_disc", () -> new RecordItem(15, YippeeSoundEvents.ITEM_RECORD_SCRATCH2, new Item.Properties().stacksTo(1).tab(Yippee.TAB).rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> DAMAGED_DISC = ITEMS.register("damaged_disc", () -> new RecordItem(15, YippeeSoundEvents.ITEM_RECORD_SCRATCH1, new Item.Properties().stacksTo(1).tab(Yippee.TAB).rarity(Rarity.RARE), 1));
+    public static final RegistryObject<Item> BROKEN_DISC = ITEMS.register("broken_disc", () -> new RecordItem(15, YippeeSoundEvents.ITEM_RECORD_SCRATCH2, new Item.Properties().stacksTo(1).tab(Yippee.TAB).rarity(Rarity.RARE), 2));
 
 }
 
