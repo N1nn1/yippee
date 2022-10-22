@@ -4,6 +4,7 @@
   "package": "com.ninni.yippee.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ExperienceOrbEntityMixin",
     "FallingBlockEntityMixin",
     "LivingEntityMixin"
   ],

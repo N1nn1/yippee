@@ -21,7 +21,18 @@
   "item.yippee.broken_disc": "Broken Disc",
   "item.yippee.broken_disc.desc": "∴⍑ᔑℸ ̣ 'ᓭ ⚍!¡",
 
+  "block.yippee.mystical_oak_planks": "Mystical Oak Planks",
+  "block.yippee.mystical_oak_sapling": "Mystical Oak Sapling",
+  "block.yippee.mystical_oak_door": "Mystical Oak Door",
+  "block.yippee.mystical_oak_trapdoor": "Mystical Oak Trapdoor",
+  "block.yippee.mystical_oak_log": "Mystical Oak Log",
+  "block.yippee.resting_mystical_oak_log": "Resting Mystical Oak Log",
+  "block.yippee.stripped_mystical_oak_log": "Stripped Mystical Oak Log",
+  "block.yippee.potted_mystical_oak_sapling": "Potted Mystical Oak Sapling",
+  "item.yippee.mystical_sap_bottle": "Mystical Sap Bottle",
+
   "effect.yippee.flattened": "Flattened",
+  "effect.yippee.wise": "Wise",
 
   "advancements.yippee.obtain_tbh.title": "Yippee",
   "advancements.yippee.obtain_tbh.description": "Obtain the creature of immense excitement",

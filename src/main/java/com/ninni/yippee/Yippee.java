@@ -22,6 +22,7 @@ public class Yippee implements ModInitializer {
 		YippeeSoundEvents.class,
 		YippeeBlocks.class,
 		YippeeStatusEffects.class,
-		YippeeItems.class);
+		YippeeItems.class
+		);
 	}
 }

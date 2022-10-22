@@ -30,7 +30,11 @@ public class YippeeClient implements ClientModInitializer {
         BlockRenderLayerMap brlm = BlockRenderLayerMap.INSTANCE;
         brlm.putBlocks(RenderLayer.getCutout(),
             YippeeBlocks.WHOOPEE_CUSHION,
-            YippeeBlocks.WEIGHT
+            YippeeBlocks.WEIGHT,
+            YippeeBlocks.MYSTICAL_OAK_SAPLING,
+            YippeeBlocks.POTTED_MYSTICAL_OAK_SAPLING,
+            YippeeBlocks.MYSTICAL_OAK_TRAPDOOR,
+            YippeeBlocks.MYSTICAL_OAK_DOOR
         );
 
         ClientPlayNetworking.registerGlobalReceiver(YippeePacketIdentifiers.FLATTEN, (client, handler, buf, sender) -> Optional.ofNullable(client.world).ifPresent(world -> {

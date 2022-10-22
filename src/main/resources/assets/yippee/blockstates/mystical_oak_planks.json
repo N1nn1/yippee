@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=down": [
+      {
+        "model": "yippee:block/mystical_oak_planks_down"
+      }
+    ],
+    "facing=up": [
+      {
+        "model": "yippee:block/mystical_oak_planks_up"
+      }
+    ],
+    "facing=north": [
+      {
+        "model": "yippee:block/mystical_oak_planks_north"
+      }
+    ],
+    "facing=south": [
+      {
+        "model": "yippee:block/mystical_oak_planks_south"
+      }
+    ],
+    "facing=east": [
+      {
+        "model": "yippee:block/mystical_oak_planks_east"
+      }
+    ],
+    "facing=west": [
+      {
+        "model": "yippee:block/mystical_oak_planks_west"
+      }
+    ]
+  }
+}

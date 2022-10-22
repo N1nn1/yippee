@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "yippee:block/mystical_oak_sapling"
+  }
+}

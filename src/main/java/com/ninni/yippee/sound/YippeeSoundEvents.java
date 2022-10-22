@@ -30,6 +30,15 @@ public interface YippeeSoundEvents {
     SoundEvent ITEM_RECORD_SCRATCH2 = broken_disc("scratch");
     private static SoundEvent broken_disc(String type) { return createItemSound("broken_disc", type); }
 
+    SoundEvent BLOCK_MYSTICAL_WOOD_SPEAK = mysticalTree("speak");
+    SoundEvent BLOCK_MYSTICAL_WOOD_COLLECT = mysticalTree("collect");
+    SoundEvent BLOCK_MYSTICAL_WOOD_BREAK = mysticalTree("break");
+    SoundEvent BLOCK_MYSTICAL_WOOD_HIT = mysticalTree("hit");
+    SoundEvent BLOCK_MYSTICAL_WOOD_STEP = mysticalTree("step");
+    SoundEvent BLOCK_MYSTICAL_WOOD_FALL = mysticalTree("fall");
+    SoundEvent BLOCK_MYSTICAL_WOOD_PLACE = mysticalTree("place");
+    private static SoundEvent mysticalTree(String type) { return createBlockSound("mystical_tree", type); }
+
     private static SoundEvent register(String id) {
         Identifier identifier = new Identifier(MOD_ID, id);
         return Registry.register(Registry.SOUND_EVENT, identifier, new SoundEvent(identifier));
