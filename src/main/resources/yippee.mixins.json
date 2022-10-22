@@ -6,7 +6,8 @@
   "mixins": [
     "ExperienceOrbEntityMixin",
     "FallingBlockEntityMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "TreeDecoratorTypeAccessor"
   ],
   "client": [
     "client.LivingEntityRendererMixin"
