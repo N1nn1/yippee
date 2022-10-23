@@ -31,13 +31,15 @@ public interface YippeeSoundEvents {
     private static SoundEvent broken_disc(String type) { return createItemSound("broken_disc", type); }
 
     SoundEvent BLOCK_MYSTICAL_WOOD_SPEAK = mysticalTree("speak");
-    SoundEvent BLOCK_MYSTICAL_WOOD_COLLECT = mysticalTree("collect");
     SoundEvent BLOCK_MYSTICAL_WOOD_BREAK = mysticalTree("break");
     SoundEvent BLOCK_MYSTICAL_WOOD_HIT = mysticalTree("hit");
     SoundEvent BLOCK_MYSTICAL_WOOD_STEP = mysticalTree("step");
     SoundEvent BLOCK_MYSTICAL_WOOD_FALL = mysticalTree("fall");
     SoundEvent BLOCK_MYSTICAL_WOOD_PLACE = mysticalTree("place");
     private static SoundEvent mysticalTree(String type) { return createBlockSound("mystical_wood", type); }
+
+    SoundEvent ITEM_MYSTICAL_SAP_BOTTLE_WISE = mysticalSap("wise");
+    private static SoundEvent mysticalSap(String type) { return createItemSound("mystical_sap", type); }
 
     private static SoundEvent register(String id) {
         Identifier identifier = new Identifier(MOD_ID, id);

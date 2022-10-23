@@ -1,7 +1,6 @@
 package com.ninni.yippee.block;
 
 import com.ninni.yippee.item.YippeeItems;
-import com.ninni.yippee.sound.YippeeSoundEvents;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,13 +23,12 @@ public class MysticalOakLogBlock extends AbstractMysticalLogBlock {
         super(settings);
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack itemStack = player.getStackInHand(hand);
         if (itemStack.isOf(Items.GLASS_BOTTLE)) {
             if (!player.getAbilities().creativeMode) itemStack.decrement(1);
-            world.playSound(player, player.getX(), player.getY(), player.getZ(), YippeeSoundEvents.BLOCK_MYSTICAL_WOOD_COLLECT, SoundCategory.NEUTRAL, 1.0f, 1.0f);
+            world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0f, 1.0f);
             if (itemStack.isEmpty()) player.setStackInHand(hand, new ItemStack(YippeeItems.MYSTICAL_SAP_BOTTLE));
             else if (!player.getInventory().insertStack(new ItemStack(YippeeItems.MYSTICAL_SAP_BOTTLE))) player.dropItem(new ItemStack(YippeeItems.MYSTICAL_SAP_BOTTLE), false);
             world.setBlockState(pos, YippeeBlocks.RESTING_MYSTICAL_OAK_LOG.getDefaultState().with(FACING, world.getBlockState(pos).get(FACING)));

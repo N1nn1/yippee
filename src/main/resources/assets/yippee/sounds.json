@@ -59,5 +59,57 @@
       "yippee:block/mystical_tree/say18"
     ],
     "subtitle": "subtitles.block.yippee.mystical_wood.speak"
+  },
+  "block.mystical_wood.break": {
+    "sounds": [
+      "yippee:block/mystical_tree/heavy1",
+      "yippee:block/mystical_tree/heavy2",
+      "yippee:block/mystical_tree/heavy3",
+      "yippee:block/mystical_tree/heavy4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.mystical_wood.step": {
+    "sounds": [
+      "yippee:block/mystical_tree/light1",
+      "yippee:block/mystical_tree/light2",
+      "yippee:block/mystical_tree/light3",
+      "yippee:block/mystical_tree/light4",
+      "yippee:block/mystical_tree/light5",
+      "yippee:block/mystical_tree/light6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.mystical_wood.hit": {
+    "sounds": [
+      {
+        "name": "yippee:block.mystical_wood.step",
+        "type": "event"
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.mystical_wood.place": {
+    "sounds": [
+      {
+        "name": "yippee:block.mystical_wood.break",
+        "type": "event"
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.mystical_wood.fall": {
+    "sounds": [
+      {
+        "name": "yippee:block.mystical_wood.break",
+        "type": "event"
+      }
+    ]
+  },
+  "item.mystical_sap.wise": {
+    "sounds": [
+      "yippee:item/mystical_sap/wise"
+    ],
+    "subtitle": "subtitles.item.yippee.mystical_sap.wise"
   }
 }

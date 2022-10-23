@@ -1,6 +1,7 @@
 package com.ninni.yippee.item;
 
 import com.ninni.yippee.entity.effect.YippeeStatusEffects;
+import com.ninni.yippee.sound.YippeeSoundEvents;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -31,7 +32,10 @@ public class MysticalSapBottleItem extends Item {
             serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
         }
 
-        if (!world.isClient) user.addStatusEffect(new StatusEffectInstance(YippeeStatusEffects.WISE, 20 * 120, 0, false, true, true));
+        if (!world.isClient) {
+            user.addStatusEffect(new StatusEffectInstance(YippeeStatusEffects.WISE, 20 * 120, 0, false, true, true));
+        }
+        user.playSound(YippeeSoundEvents.ITEM_MYSTICAL_SAP_BOTTLE_WISE, 1, 1);
         if (stack.isEmpty()) return new ItemStack(Items.GLASS_BOTTLE);
 
         if (user instanceof PlayerEntity playerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
