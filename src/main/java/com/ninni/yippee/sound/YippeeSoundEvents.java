@@ -4,7 +4,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import static com.ninni.yippee.Yippee.*;
+import static com.ninni.yippee.Yippee.MOD_ID;
 
 public interface YippeeSoundEvents {
 
@@ -37,7 +37,7 @@ public interface YippeeSoundEvents {
     SoundEvent BLOCK_MYSTICAL_WOOD_STEP = mysticalTree("step");
     SoundEvent BLOCK_MYSTICAL_WOOD_FALL = mysticalTree("fall");
     SoundEvent BLOCK_MYSTICAL_WOOD_PLACE = mysticalTree("place");
-    private static SoundEvent mysticalTree(String type) { return createBlockSound("mystical_tree", type); }
+    private static SoundEvent mysticalTree(String type) { return createBlockSound("mystical_wood", type); }
 
     private static SoundEvent register(String id) {
         Identifier identifier = new Identifier(MOD_ID, id);

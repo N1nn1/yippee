@@ -4,12 +4,7 @@ import com.ninni.yippee.block.entity.TacoBellBlockEntity;
 import com.ninni.yippee.entity.effect.client.YippeeEntityModelLayers;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.model.ModelData;
-import net.minecraft.client.model.ModelPart;
-import net.minecraft.client.model.ModelPartBuilder;
-import net.minecraft.client.model.ModelPartData;
-import net.minecraft.client.model.ModelTransform;
-import net.minecraft.client.model.TexturedModelData;
+import net.minecraft.client.model.*;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -22,7 +17,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 
-import static com.ninni.yippee.Yippee.*;
+import static com.ninni.yippee.Yippee.MOD_ID;
 
 @Environment(EnvType.CLIENT)
 public class TacoBellBlockEntityRenderer implements BlockEntityRenderer<TacoBellBlockEntity> {

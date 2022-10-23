@@ -11,7 +11,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
-import static com.ninni.yippee.Yippee.*;
+import static com.ninni.yippee.Yippee.ITEM_GROUP;
+import static com.ninni.yippee.Yippee.MOD_ID;
 
 @SuppressWarnings("unused")
 public class YippeeItems {

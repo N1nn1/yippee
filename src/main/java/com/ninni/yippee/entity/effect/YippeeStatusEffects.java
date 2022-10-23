@@ -8,7 +8,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import static com.ninni.yippee.Yippee.*;
+import static com.ninni.yippee.Yippee.MOD_ID;
 
 public class YippeeStatusEffects {
     public static final StatusEffect FLATTENED = register("flattened", new PublicStatusEffect(StatusEffectCategory.HARMFUL, 0x12121A).addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.2f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));

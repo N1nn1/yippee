@@ -9,16 +9,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.FeatureConfig;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.feature.PlacedFeatures;
-import net.minecraft.world.gen.feature.RandomFeatureConfig;
-import net.minecraft.world.gen.feature.RandomFeatureEntry;
-import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
-import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
+import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
@@ -35,7 +26,7 @@ public class YippeeWorldGen {
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> MYSTICAL_TREE = register("mystical", Feature.TREE, mysticalTree().build());
     public static final RegistryEntry<PlacedFeature> MYSTICAL_TREE_CHECKED = register("mystical_tree", MYSTICAL_TREE, PlacedFeatures.wouldSurvive(YippeeBlocks.MYSTICAL_OAK_SAPLING));
     public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> MYSTICAL_TREE_FILTERED = register("mystical_tree_filtered", Feature.RANDOM_SELECTOR, new RandomFeatureConfig(List.of(new RandomFeatureEntry(MYSTICAL_TREE_CHECKED, 0.0F)), MYSTICAL_TREE_CHECKED));
-    public static final RegistryEntry<PlacedFeature> MYSTICAL_TREES = register("trees_mystical", MYSTICAL_TREE_FILTERED, VegetationPlacedFeatures.modifiers(RarityFilterPlacementModifier.of(100)));
+    public static final RegistryEntry<PlacedFeature> MYSTICAL_TREES = register("trees_mystical", MYSTICAL_TREE_FILTERED, VegetationPlacedFeatures.modifiers(RarityFilterPlacementModifier.of(50)));
 
     private static TreeFeatureConfig.Builder builder(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
         return new TreeFeatureConfig.Builder(BlockStateProvider.of(log), new StraightTrunkPlacer(baseHeight, firstRandomHeight, secondRandomHeight), BlockStateProvider.of(leaves), new BlobFoliagePlacer(ConstantIntProvider.create(radius), ConstantIntProvider.create(0), 3), new TwoLayersFeatureSize(1, 0, 1));

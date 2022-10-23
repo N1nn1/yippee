@@ -13,7 +13,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
-@SuppressWarnings("deprecation")
 public class RestingMysticalOakLogBLock extends AbstractMysticalLogBlock {
 
     public RestingMysticalOakLogBLock(Settings settings) {
@@ -32,7 +31,7 @@ public class RestingMysticalOakLogBLock extends AbstractMysticalLogBlock {
             }
             return ActionResult.SUCCESS;
         }
-        return super.onUse(state, world, pos, player, hand, hit);
+        return ActionResult.PASS;
     }
 
     @Override

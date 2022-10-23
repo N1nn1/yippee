@@ -7,7 +7,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
-import static com.ninni.yippee.Yippee.*;
+import static com.ninni.yippee.Yippee.MOD_ID;
 
 @Environment(EnvType.CLIENT)
 public interface YippeeEntityModelLayers {

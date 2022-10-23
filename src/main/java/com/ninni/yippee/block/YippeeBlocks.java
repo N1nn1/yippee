@@ -6,7 +6,6 @@ import com.ninni.yippee.world.MysticalSaplingGenerator;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.block.sapling.OakSaplingGenerator;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.entry.ItemEntry;
@@ -16,7 +15,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import static com.ninni.yippee.Yippee.*;
+import static com.ninni.yippee.Yippee.MOD_ID;
 import static net.minecraft.block.Blocks.*;
 
 public class YippeeBlocks {

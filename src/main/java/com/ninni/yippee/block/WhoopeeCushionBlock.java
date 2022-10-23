@@ -2,12 +2,7 @@ package com.ninni.yippee.block;
 
 import com.ninni.yippee.sound.YippeeSoundEvents;
 import com.ninni.yippee.state.property.YippeeProperties;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.AbstractPressurePlateBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.block.Waterloggable;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -32,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static net.minecraft.state.property.Properties.*;
+import static net.minecraft.state.property.Properties.WATERLOGGED;
 
 @SuppressWarnings("deprecation")
 public class WhoopeeCushionBlock extends AbstractPressurePlateBlock implements Waterloggable {
