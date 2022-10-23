@@ -4,9 +4,12 @@
   "version": "${version}",
 
   "name": "Yippee",
-  "description": "YIPPEEEEEEEEEEEEEEEEEEEEEEE!",
+  "description": "A not too serious minecraft mod that plans on adding many meme related features in a believable way.!",
   "authors": ["Ninni"],
-  "contributors": ["Orcinus"],
+  "contributors": [
+    "Orcinus",
+    "Dopadream"
+  ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/yippee",
     "sources": "https://github.com/N1nn1/yippee",
