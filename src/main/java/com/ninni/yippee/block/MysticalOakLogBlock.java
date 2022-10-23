@@ -30,7 +30,7 @@ public class MysticalOakLogBlock extends AbstractMysticalLogBlock {
         ItemStack itemStack = player.getItemInHand(hand);
         if (itemStack.is(Items.GLASS_BOTTLE)) {
             if (!player.getAbilities().instabuild) itemStack.shrink(1);
-            world.playSound(player, player.getX(), player.getY(), player.getZ(), YippeeSoundEvents.BLOCK_MYSTICAL_WOOD_COLLECT.get(), SoundSource.NEUTRAL, 1.0f, 1.0f);
+            world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0f, 1.0f);
             if (itemStack.isEmpty()) player.setItemInHand(hand, new ItemStack(YippeeItems.MYSTICAL_SAP_BOTTLE.get()));
             else if (!player.getInventory().add(new ItemStack(YippeeItems.MYSTICAL_SAP_BOTTLE.get()))) player.drop(new ItemStack(YippeeItems.MYSTICAL_SAP_BOTTLE.get()), false);
             world.setBlockAndUpdate(pos, YippeeBlocks.RESTING_MYSTICAL_OAK_LOG.get().defaultBlockState().setValue(FACING, world.getBlockState(pos).getValue(FACING)));

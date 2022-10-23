@@ -3,13 +3,13 @@ loaderVersion="[32,)"
 license="All rights reserved"
 [[mods]]
 modId="yippee"
-version="1.19.1-1.2.2"
+version="1.19.1-1.3"
 displayName="Yippee"
 logoFile= "icon.png"
-credits=""
+credits="Orcinus, Dopadream"
 authors="Ninni"
 description='''
-YIPPEEEEEEEEEEEEEEEEEEEEEEE!
+A not too serious minecraft mod that plans on adding many meme related features in a believable way.!
 '''
 [[dependencies.yippee]]
 modId="forge"

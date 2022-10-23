@@ -1,6 +1,7 @@
 package com.ninni.yippee.item;
 
 import com.ninni.yippee.init.YippeeMobEffects;
+import com.ninni.yippee.init.YippeeSoundEvents;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -31,7 +32,11 @@ public class MysticalSapBottleItem extends Item {
             serverPlayer.awardStat(Stats.ITEM_USED.get(this));
         }
 
-        if (!world.isClientSide()) user.addEffect(new MobEffectInstance(YippeeMobEffects.WISE.get(), 20 * 120, 0, false, true, true));
+        if (!world.isClientSide) {
+            user.addEffect(new MobEffectInstance(YippeeMobEffects.WISE.get(), 20 * 120, 0, false, true, true));
+        }
+        user.playSound(YippeeSoundEvents.ITEM_MYSTICAL_SAP_BOTTLE_WISE.get(), 1, 1);
+
         if (stack.isEmpty()) return new ItemStack(Items.GLASS_BOTTLE);
 
         if (user instanceof Player playerEntity && !((Player)user).getAbilities().instabuild) {

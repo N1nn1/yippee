@@ -36,6 +36,11 @@
   "advancements.yippee.obtain_tbh.description": "Obtain the creature of immense excitement",
   "advancements.yippee.place_weight.title": "Bonk",
   "advancements.yippee.place_weight.description": "Place a Weight block and get up to mischief",
+  "advancements.yippee.harvest_sap.title": "Wise Mystical Encounter",
+  "advancements.yippee.harvest_sap.description": "Gather mystical sap from a curious-looking tree. If you are over 25 and own a Minecraft account you must try this mod",
+
+  "subtitles.block.yippee.mystical_wood.speak": "Mystical wisdom is shared",
+  "subtitles.item.yippee.mystical_sap.wise": "Ancient knowledge is released",
 
   "subtitles.item.yippee.tbh.yippee": "tbh bursts of excitement",
   "subtitles.item.yippee.moyai.boom": "Ancient Power awakens",

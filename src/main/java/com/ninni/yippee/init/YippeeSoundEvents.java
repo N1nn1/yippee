@@ -25,12 +25,12 @@ public class YippeeSoundEvents {
     public static final RegistryObject<SoundEvent> ITEM_RECORD_SCRATCH1 = SOUND_EVENTS.register("item.damaged_disc.scratch", () -> new SoundEvent(new ResourceLocation(Yippee.MOD_ID, "item.damaged_disc.scratch")));
     public static final RegistryObject<SoundEvent> ITEM_RECORD_SCRATCH2 = SOUND_EVENTS.register("item.broken_disc.scratch", () -> new SoundEvent(new ResourceLocation(Yippee.MOD_ID, "item.broken_disc.scratch")));
     public static final RegistryObject<SoundEvent> BLOCK_MYSTICAL_WOOD_SPEAK = SOUND_EVENTS.register("block.mystical_tree.speak", () -> new SoundEvent(new ResourceLocation(Yippee.MOD_ID, "block.mystical_tree.speak")));
-    public static final RegistryObject<SoundEvent> BLOCK_MYSTICAL_WOOD_COLLECT = SOUND_EVENTS.register("block.mystical_wood.collect", () -> new SoundEvent(new ResourceLocation(Yippee.MOD_ID, "block.mystical_wood.collect")));
     public static final RegistryObject<SoundEvent> BLOCK_MYSTICAL_WOOD_BREAK = SOUND_EVENTS.register("block.mystical_wood.break", () -> new SoundEvent(new ResourceLocation(Yippee.MOD_ID, "block.mystical_wood.break")));
     public static final RegistryObject<SoundEvent> BLOCK_MYSTICAL_WOOD_HIT = SOUND_EVENTS.register("block.mystical_wood.hit", () -> new SoundEvent(new ResourceLocation(Yippee.MOD_ID, "block.mystical_wood.hit")));
     public static final RegistryObject<SoundEvent> BLOCK_MYSTICAL_WOOD_STEP = SOUND_EVENTS.register("block.mystical_wood.step", () -> new SoundEvent(new ResourceLocation(Yippee.MOD_ID, "block.mystical_wood.step")));
     public static final RegistryObject<SoundEvent> BLOCK_MYSTICAL_WOOD_FALL = SOUND_EVENTS.register("block.mystical_wood.fall", () -> new SoundEvent(new ResourceLocation(Yippee.MOD_ID, "block.mystical_wood.fall")));
     public static final RegistryObject<SoundEvent> BLOCK_MYSTICAL_WOOD_PLACE = SOUND_EVENTS.register("block.mystical_wood.place", () -> new SoundEvent(new ResourceLocation(Yippee.MOD_ID, "block.mystical_wood.place")));
+    public static final RegistryObject<SoundEvent> ITEM_MYSTICAL_SAP_BOTTLE_WISE = SOUND_EVENTS.register("item.mystical_sap.wise", () -> new SoundEvent(new ResourceLocation(Yippee.MOD_ID, "item.mystical_sap.wise")));
     public static final SoundType WEIGHT = new ForgeSoundType(1.0F, 0.5F, () -> SoundEvents.ANVIL_BREAK, () -> SoundEvents.ANVIL_STEP, () -> SoundEvents.ANVIL_PLACE, () -> SoundEvents.ANVIL_HIT, () -> SoundEvents.ANVIL_FALL);
     public static final SoundType MYSTICAL_WOOD = new ForgeSoundType(1F, 1F, YippeeSoundEvents.BLOCK_MYSTICAL_WOOD_BREAK, YippeeSoundEvents.BLOCK_MYSTICAL_WOOD_STEP, YippeeSoundEvents.BLOCK_MYSTICAL_WOOD_PLACE, YippeeSoundEvents.BLOCK_MYSTICAL_WOOD_HIT, YippeeSoundEvents.BLOCK_MYSTICAL_WOOD_FALL);
 }
