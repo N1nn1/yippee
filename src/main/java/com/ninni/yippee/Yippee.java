@@ -6,8 +6,10 @@ import com.ninni.yippee.events.MiscEvents;
 import com.ninni.yippee.init.YippeeBlockEntityTypes;
 import com.ninni.yippee.init.YippeeSoundEvents;
 import com.ninni.yippee.init.YippeeItems;
+import com.ninni.yippee.init.YippeeWorldGen;
 import com.ninni.yippee.network.YippeeNetworkHandler;
 import com.ninni.yippee.util.YippeeCreativeModeTab;
+import com.ninni.yippee.world.YippeeTreeDecorators;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,6 +30,7 @@ public class Yippee {
 		YippeeBlocks.BLOCKS.register(modEventBus);
 		YippeeBlockEntityTypes.BLOCK_ENTITIES.register(modEventBus);
 		YippeeItems.ITEMS.register(modEventBus);
+		YippeeTreeDecorators.TREE_DECORATOR_TYPES.register(modEventBus);
 		YippeeMobEffects.MOB_EFFECT.register(modEventBus);
 		YippeeSoundEvents.SOUND_EVENTS.register(modEventBus);
 
@@ -36,7 +39,10 @@ public class Yippee {
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
-		event.enqueueWork(YippeeNetworkHandler::init);
+		event.enqueueWork(() -> {
+			YippeeWorldGen.init();
+			YippeeNetworkHandler.init();
+		});
 	}
 
 }

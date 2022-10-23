@@ -2,10 +2,13 @@ package com.ninni.yippee.init;
 
 import com.ninni.yippee.Yippee;
 import com.ninni.yippee.item.MoyaiStatueItem;
+import com.ninni.yippee.item.MysticalSapBottleItem;
 import com.ninni.yippee.item.TBHItem;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.RecordItem;
 import net.minecraftforge.fml.common.Mod;
@@ -29,6 +32,14 @@ public class YippeeItems {
     public static final RegistryObject<Item> WEIGHT = ITEMS.register("weight", () -> new BlockItem(YippeeBlocks.WEIGHT.get(), new Item.Properties().tab(Yippee.TAB)));
     public static final RegistryObject<Item> DAMAGED_DISC = ITEMS.register("damaged_disc", () -> new RecordItem(15, YippeeSoundEvents.ITEM_RECORD_SCRATCH1, new Item.Properties().stacksTo(1).tab(Yippee.TAB).rarity(Rarity.RARE), 1));
     public static final RegistryObject<Item> BROKEN_DISC = ITEMS.register("broken_disc", () -> new RecordItem(15, YippeeSoundEvents.ITEM_RECORD_SCRATCH2, new Item.Properties().stacksTo(1).tab(Yippee.TAB).rarity(Rarity.RARE), 2));
+    public static final RegistryObject<Item> MYSTICAL_OAK_LOG = ITEMS.register("mystical_oak_log", () -> new BlockItem(YippeeBlocks.MYSTICAL_OAK_LOG.get(), new Item.Properties().tab(Yippee.TAB).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> RESTING_MYSTICAL_OAK_LOG = ITEMS.register("resting_mystical_oak_log", () -> new BlockItem(YippeeBlocks.RESTING_MYSTICAL_OAK_LOG.get(), new Item.Properties().tab(Yippee.TAB).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> STRIPPED_MYSTICAL_OAK_LOG = ITEMS.register("stripped_mystical_oak_log", () -> new BlockItem(YippeeBlocks.STRIPPED_MYSTICAL_OAK_LOG.get(), new Item.Properties().tab(Yippee.TAB).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> MYSTICAL_OAK_PLANKS = ITEMS.register("mystical_oak_planks", () -> new BlockItem(YippeeBlocks.MYSTICAL_OAK_PLANKS.get(), new Item.Properties().tab(Yippee.TAB).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> MYSTICAL_OAK_SAPLING = ITEMS.register("mystical_oak_sapling", () -> new BlockItem(YippeeBlocks.MYSTICAL_OAK_SAPLING.get(), new Item.Properties().tab(Yippee.TAB).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> MYSTICAL_OAK_DOOR = ITEMS.register("mystical_oak_door", () -> new BlockItem(YippeeBlocks.MYSTICAL_OAK_DOOR.get(), new Item.Properties().tab(Yippee.TAB).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> MYSTICAL_OAK_TRAPDOOR = ITEMS.register("mystical_oak_trapdoor", () -> new BlockItem(YippeeBlocks.MYSTICAL_OAK_TRAPDOOR.get(), new Item.Properties().tab(Yippee.TAB).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> MYSTICAL_SAP_BOTTLE = ITEMS.register("mystical_sap_bottle", () -> new MysticalSapBottleItem(new Item.Properties().stacksTo(16).tab(Yippee.TAB).craftRemainder(Items.GLASS_BOTTLE).rarity(Rarity.UNCOMMON).food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2f).build())));
 
 }
 

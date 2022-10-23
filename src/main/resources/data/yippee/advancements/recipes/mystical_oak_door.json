@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "yippee:mystical_oak_door"
+    ]
+  },
+  "criteria": {
+    "has_mystical_sap_bottle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "yippee:mystical_sap_bottle"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "yippee:mystical_oak_door"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mystical_sap_bottle",
+      "has_the_recipe"
+    ]
+  ]
+}

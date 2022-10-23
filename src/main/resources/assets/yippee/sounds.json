@@ -4,9 +4,9 @@
     "subtitle": "subtitles.item.yippee.tbh.yippee"
   },
   "item.moyai.boom": {
-    "sounds": [ "yippee:item/moyai/boom" ],
-    "subtitle": "subtitles.item.yippee.moyai.boom"
-  },
+  "sounds": [ "yippee:item/moyai/boom" ],
+  "subtitle": "subtitles.item.yippee.moyai.boom"
+ },
   "block.whoopee_cushion.pressed": {
     "sounds": [
       "yippee:block/whoopee_cushion/pressed1",
@@ -36,5 +36,28 @@
   "item.broken_disc.scratch": {
     "sounds": [ "yippee:item/discs/record_scratch2" ],
     "subtitle": "subtitles.item.yippee.disc.scratch"
+  },
+  "block.mystical_wood.speak": {
+    "sounds": [
+      "yippee:block/mystical_tree/say1",
+      "yippee:block/mystical_tree/say2",
+      "yippee:block/mystical_tree/say3",
+      "yippee:block/mystical_tree/say4",
+      "yippee:block/mystical_tree/say5",
+      "yippee:block/mystical_tree/say6",
+      "yippee:block/mystical_tree/say7",
+      "yippee:block/mystical_tree/say8",
+      "yippee:block/mystical_tree/say9",
+      "yippee:block/mystical_tree/say10",
+      "yippee:block/mystical_tree/say11",
+      "yippee:block/mystical_tree/say12",
+      "yippee:block/mystical_tree/say13",
+      "yippee:block/mystical_tree/say14",
+      "yippee:block/mystical_tree/say15",
+      "yippee:block/mystical_tree/say16",
+      "yippee:block/mystical_tree/say17",
+      "yippee:block/mystical_tree/say18"
+    ],
+    "subtitle": "subtitles.block.yippee.mystical_wood.speak"
   }
 }

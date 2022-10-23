@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:oak_trapdoor"
+    },
+    {
+      "item": "yippee:mystical_sap_bottle"
+    }
+  ],
+  "result": {
+    "item": "yippee:mystical_oak_trapdoor",
+    "count": 1
+  }
+}

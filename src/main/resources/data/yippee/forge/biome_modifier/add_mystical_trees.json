@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#yippee:trees_mystical_generates",
+  "features": [
+    "yippee:trees_mystical"
+  ],
+  "step": "vegetal_decoration"
+}
