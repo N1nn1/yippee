@@ -1,0 +1,40 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "harvest_sap": {
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:glass_bottle"
+          ]
+        },
+        "location": {
+          "block": {
+            "block": "yippee:mystical_oak_log"
+          }
+        }
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.yippee.harvest_sap.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "yippee:mystical_sap_bottle"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.yippee.harvest_sap.title"
+    }
+  },
+  "requirements": [
+    [
+      "harvest_sap"
+    ]
+  ]
+}
