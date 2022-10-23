@@ -21,13 +21,26 @@
   "item.yippee.broken_disc": "Disco distrutto",
   "item.yippee.broken_disc.desc": "∴⍑ᔑℸ ̣ 'ᓭ ⚍!¡",
 
+  "block.yippee.mystical_oak_planks": "Assi di quercia mistica",
+  "block.yippee.mystical_oak_sapling": "Arboscello di quercia mistica",
+  "block.yippee.mystical_oak_door": "Porta di quercia mistica",
+  "block.yippee.mystical_oak_trapdoor": "Botola di quercia mistica",
+  "block.yippee.mystical_oak_log": "Tronco di quercia mistica",
+  "block.yippee.resting_mystical_oak_log": "Tronco quercia mistica a riposo",
+  "block.yippee.stripped_mystical_oak_log": "Tronco di quercia mistica scortecciato",
+  "block.yippee.potted_mystical_oak_sapling": "Vaso con arboscello di quercia mistica",
+  "item.yippee.mystical_sap_bottle": "Bottiglia di linfa mistica",
+
   "effect.yippee.flattened": "Spiaccicato",
+  "effect.yippee.wise": "Saggezza",
 
   "advancements.yippee.obtain_tbh.title": "||⚍!¡!¡╎",
   "advancements.yippee.obtain_tbh.description": "Ottieni la creatura dall'immensa gioia",
   "advancements.yippee.place_weight.title": "Bonk",
   "advancements.yippee.place_weight.description": "Piazza un peso e prepara degli scherzetti",
 
+  "subtitles.block.yippee.mystical_wood.speak": "Perla di saggezza viene pronunciata",
+  "subtitles.item.yippee.mystical_sap.wise": "Antiche conoscenze si propagano",
   "subtitles.item.yippee.tbh.yippee": "tbh scoppia di gioia",
   "subtitles.item.yippee.moyai.boom": "Potere antico si sprigiona",
   "subtitles.block.yippee.whoopee_cushion.pressed": "Cuscinetto si sgonfia",
