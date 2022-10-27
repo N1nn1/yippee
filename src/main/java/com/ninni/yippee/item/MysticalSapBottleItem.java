@@ -27,6 +27,7 @@ public class MysticalSapBottleItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity user) {
+        super.finishUsingItem(stack, world, user);
         if (user instanceof ServerPlayer serverPlayer) {
             CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayer, stack);
             serverPlayer.awardStat(Stats.ITEM_USED.get(this));
@@ -39,7 +40,7 @@ public class MysticalSapBottleItem extends Item {
 
         if (stack.isEmpty()) return new ItemStack(Items.GLASS_BOTTLE);
 
-        if (user instanceof Player playerEntity && !((Player)user).getAbilities().instabuild) {
+        if (user instanceof Player playerEntity && !playerEntity.getAbilities().instabuild) {
             ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
             if (!playerEntity.getInventory().add(itemStack)) playerEntity.drop(itemStack, false);
         }
