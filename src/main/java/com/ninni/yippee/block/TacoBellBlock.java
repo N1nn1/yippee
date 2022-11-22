@@ -76,7 +76,10 @@ public class TacoBellBlock extends BlockWithEntity {
         this.ring(world, state, hit, entity instanceof PlayerEntity ? (PlayerEntity)entity : null, true);
     }
 
-    @Override public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) { return this.ring(world, state, hit, player, true) ? ActionResult.success(world.isClient) : ActionResult.PASS; }
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        return this.ring(world, state, hit, player, true) ? ActionResult.success(world.isClient) : ActionResult.PASS;
+    }
 
     public boolean ring(World world, BlockState state, BlockHitResult hitResult, @Nullable PlayerEntity player, boolean bl) {
         boolean bl2;
@@ -101,7 +104,9 @@ public class TacoBellBlock extends BlockWithEntity {
         };
     }
 
-    public void ring(World world, BlockPos pos, @Nullable Direction direction) {this.ring(null, world, pos, direction);}
+    public void ring(World world, BlockPos pos, @Nullable Direction direction) {
+        this.ring(null, world, pos, direction);
+    }
 
     public boolean ring(@Nullable Entity entity, World world, BlockPos pos, @Nullable Direction direction) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
@@ -134,9 +139,20 @@ public class TacoBellBlock extends BlockWithEntity {
         return WEST_WALL_SHAPE;
     }
 
-    @Override public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) { return this.getShape(state); }
-    @Override public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) { return this.getShape(state); }
-    @Override public BlockRenderType getRenderType(BlockState state) { return BlockRenderType.MODEL; }
+    @Override
+    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return this.getShape(state);
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return this.getShape(state);
+    }
+
+    @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
+    }
 
     @Override
     @Nullable
@@ -187,9 +203,30 @@ public class TacoBellBlock extends BlockWithEntity {
         };
     }
 
-    @Override public PistonBehavior getPistonBehavior(BlockState state) { return PistonBehavior.DESTROY; }
-    @Override protected void appendProperties(StateManager.Builder<Block, BlockState> builder) { builder.add(FACING, ATTACHMENT, POWERED); }
-    @Nullable @Override public BlockEntity createBlockEntity(BlockPos pos, BlockState state) { return new TacoBellBlockEntity(pos, state); }
-    @Override @Nullable public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) { return TacoBellBlock.checkType(type, YippeeBlockEntityType.TACO_BELL, world.isClient ? TacoBellBlockEntity::clientTick : TacoBellBlockEntity::serverTick); }
-    @Override public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) { return false; }
+    @Override
+    public PistonBehavior getPistonBehavior(BlockState state) {
+        return PistonBehavior.DESTROY;
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(FACING, ATTACHMENT, POWERED);
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new TacoBellBlockEntity(pos, state);
+    }
+
+    @Override
+    @Nullable
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        return checkType(type, YippeeBlockEntityType.TACO_BELL, world.isClient ? TacoBellBlockEntity::clientTick : TacoBellBlockEntity::serverTick);
+    }
+
+    @Override
+    public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
+        return false;
+    }
 }

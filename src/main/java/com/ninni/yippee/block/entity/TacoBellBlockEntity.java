@@ -35,23 +35,34 @@ public class TacoBellBlockEntity extends BlockEntity{
     }
 
     private static void tick(TacoBellBlockEntity blockEntity) {
-        if (blockEntity.ringing) ++blockEntity.ringTicks;
+        if (blockEntity.ringing) {
+            ++blockEntity.ringTicks;
+        }
+
         if (blockEntity.ringTicks >= 50) {
             blockEntity.ringing = false;
             blockEntity.ringTicks = 0;
         }
-        if (blockEntity.ringTicks >= 5 && blockEntity.resonateTime == 0) {
-            blockEntity.resonating = true;
-        }
+
         if (blockEntity.resonating) {
-            if (blockEntity.resonateTime < 40) ++blockEntity.resonateTime;
-            else blockEntity.resonating = false;
+            if (blockEntity.resonateTime < 40) {
+                ++blockEntity.resonateTime;
+            } else {
+                blockEntity.resonating = false;
+            }
         }
 
     }
 
-    @SuppressWarnings("unused") public static void clientTick(World world, BlockPos pos, BlockState state, TacoBellBlockEntity blockEntity) { tick(blockEntity); }
-    @SuppressWarnings("unused") public static void serverTick(World world, BlockPos pos, BlockState state, TacoBellBlockEntity blockEntity) { tick(blockEntity); }
+    @SuppressWarnings("unused")
+    public static void clientTick(World world, BlockPos pos, BlockState state, TacoBellBlockEntity blockEntity) {
+        tick(blockEntity);
+    }
+
+    @SuppressWarnings("unused")
+    public static void serverTick(World world, BlockPos pos, BlockState state, TacoBellBlockEntity blockEntity) {
+        tick(blockEntity);
+    }
 
     public void activate(Direction direction) {
         BlockPos blockPos = this.getPos();
