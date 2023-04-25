@@ -1,0 +1,53 @@
+{
+  "itemGroup.yippee.item_group": "Yippee",
+  "mod.yippee.contact.discord": "Discord",
+  "mod.yippee.wiki": "Wiki",
+
+  "item.yippee.yippee": "Yippee",
+
+  "item.yippee.tbh": "tbh",
+  "item.yippee.moyai_statue": "Статуя Мояї",
+
+  "block.yippee.whoopee_cushion": "Подушка пердушка",
+
+  "block.yippee.taco_bell": "Тако белл",
+
+  "block.yippee.weight": "Тягар",
+  "death.attack.weight": "%1$s був розплющений величезною вагою",
+  "death.attack.weight.player": "%1$s був розплющений величезною вагою під час бою з %2$s",
+
+  "item.yippee.damaged_disc": "Пошкоджена платівка",
+  "item.yippee.damaged_disc.desc": "ᓭᓭᓭᓭᓭᓭ...",
+  "item.yippee.broken_disc": "Зламана платівка",
+  "item.yippee.broken_disc.desc": "∴⍑ᔑℸ ̣ 'ᓭ ⚍!¡",
+
+  "block.yippee.mystical_oak_planks": "Містичні дубові дошки",
+  "block.yippee.mystical_oak_sapling": "Паросток містичного дуба",
+  "block.yippee.mystical_oak_door": "Містичні дубові двер",
+  "block.yippee.mystical_oak_trapdoor": "Містичний дубовий люк",
+  "block.yippee.mystical_oak_log": "Містична дубова колода",
+  "block.yippee.resting_mystical_oak_log": "Відпочиваюча містичниа дубова колода",
+  "block.yippee.stripped_mystical_oak_log": "Обтесана містична дубова колода",
+  "block.yippee.potted_mystical_oak_sapling": "Паросток містичного дерева в горщику",
+  "item.yippee.mystical_sap_bottle": "Пляшечка містичного соку",
+
+  "effect.yippee.flattened": "Сплющеність",
+  "effect.yippee.wise": "Мудрість",
+
+  "advancements.yippee.obtain_tbh.title": "Yippee",
+  "advancements.yippee.obtain_tbh.description": "Отримайте неймовірно хвилюючу істоту",
+  "advancements.yippee.place_weight.title": "Бонк",
+  "advancements.yippee.place_weight.description": "Поставте Тягар та встаньте під ним",
+  "advancements.yippee.harvest_sap.title": "Мудра містична зустріч",
+  "advancements.yippee.harvest_sap.description": "Зберіть містичний сік із дивного на вигляд дерева. Якщо вам більше 25 років і ви маєте обліковий запис Minecraft, ви повинні спробувати цей мод",
+
+  "subtitles.block.yippee.mystical_wood.speak": "Містична мудрість поширюється",
+  "subtitles.item.yippee.mystical_sap.wise": "Стародавні знання вивільняються",
+  "subtitles.item.yippee.tbh.yippee": "tbh спалахи збудження",
+  "subtitles.item.yippee.moyai.boom": "Стародавня сила пробуджується",
+  "subtitles.block.yippee.whoopee_cushion.pressed": "Подушка здувається",
+  "subtitles.block.yippee.whoopee_cushion.unpressed": "Подушка надувається",
+  "subtitles.block.yippee.taco_bell.ring": "Тако белл дзвонить",
+  "subtitles.block.yippee.weight.fall": "Тягар падає",
+  "subtitles.item.yippee.disc.scratch": "Платівка дряпається"
+}
