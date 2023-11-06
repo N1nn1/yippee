@@ -37,6 +37,7 @@ public class Yippee implements ModInitializer {
 		YippeeItems.class
 		);
 		YippeeWorldGen.MYSTICAL_TREES.getKey().ifPresent(this::addFeature);
+		YippeeBlockEntityType.initialize();
 	}
 
 	private void addFeature(RegistryKey<PlacedFeature> placedFeatureRegistryKey) {
